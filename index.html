@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE LITTLE MUSEUM | Sảnh Vào</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 24px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #2c241b;
+            background: linear-gradient(-45deg, #17130e, #2b2218, #1f1912, #36291b);
+            background-size: 400% 400%;
+            animation: anhSangBaoTang 14s ease infinite;
+            min-height: 100vh;
+            line-height: 1.65;
+        }
+        @keyframes anhSangBaoTang {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .sanh-bao-tang {
+            max-width: 820px;
+            margin: 0 auto;
+            background: #f7f3eb;
+            border: 2px solid #c5a059;
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65), inset 0 0 0 6px rgba(197, 160, 89, 0.18);
+        }
+        header {
+            text-align: center;
+            border-bottom: 1px solid #d4b982;
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+        }
+        h1 {
+            font-size: 1.9em;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #3b2a18;
+            margin: 0 0 12px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #5a3f22;
+            font-weight: bold;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+        nav a:hover { color: #9c6f2c; }
+        section { margin-bottom: 28px; }
+        h2 {
+            color: #3b2a18;
+            font-size: 1.25em;
+            letter-spacing: 1px;
+            border-left: 4px solid #c5a059;
+            padding-left: 12px;
+            margin-bottom: 12px;
+        }
+        .phan-mo-dau { text-align: center; }
+        .phan-mo-dau h2 {
+            border: none;
+            padding: 0;
+            font-size: 1.5em;
+        }
+        .cau-gioi-thieu {
+            color: #6e583b;
+            font-style: italic;
+            margin-bottom: 16px;
+        }
+        figure {
+            margin: 0;
+            background: #fffdf9;
+            padding: 12px;
+            border: 1px solid #d4b982;
+            border-radius: 8px;
+        }
+        figure img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        figcaption {
+            font-size: 0.88em;
+            color: #6e583b;
+            margin-top: 8px;
+        }
+        .the-trien-lam {
+            background: #fffdf9;
+            border: 1px solid #d4b982;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        .nut-bam {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 10px 22px;
+            background: #3b2a18;
+            color: #f7e6c4;
+            border: 1px solid #c5a059;
+            border-radius: 6px;
+            font-size: 0.9em;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.25s;
+        }
+        .nut-bam:hover {
+            background: #5a3f22;
+            color: #ffffff;
+        }
+        footer {
+            border-top: 1px solid #d4b982;
+            padding-top: 16px;
+            text-align: center;
+            font-size: 0.88em;
+            color: #5a4632;
+        }
+        footer p { margin: 4px 0; }
+    </style>
+</head>
+<body>
+    <div class="sanh-bao-tang">
+        <header>
+            <h1>THE LITTLE MUSEUM</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="#gioi-thieu">ABOUT</a></li>
+                    <li><a href="exhibition.html">EXHIBITION</a></li>
+                    <li><a href="#lien-he">CONTACT</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="mo-dau" class="phan-mo-dau">
+                <h2>THE ENTRANCE &mdash; SẢNH VÀO</h2>
+                <p class="cau-gioi-thieu">"Ba cá thể, ba thế giới khác biệt"</p>
+                <figure>
+                    <img src="images/group-photo.jpg" alt="Ảnh chung của ba thành viên">
+                    <figcaption>Ba cá thể, ba góc nhìn tạo nên không gian triển lãm này.</figcaption>
+                </figure>
+            </section>
+
+            <section id="gioi-thieu">
+                <h2>VỀ BẢO TÀNG</h2>
+                <p><strong>Ý tưởng:</strong> Mỗi con người là một bảo tàng thu nhỏ lưu giữ ký ức và dấu ấn cá nhân.</p>
+                <p><strong>Mục đích &amp; Thông điệp:</strong> Kết nối và tôn vinh màu sắc riêng biệt của từng thành viên trong nhóm.</p>
+            </section>
+
+            <section id="xem-truoc-trien-lam" class="the-trien-lam">
+                <h2>BƯỚC VÀO TRIỂN LÃM</h2>
+                <p>Khám phá ba thế giới khác biệt qua câu chuyện của ba cá nhân.</p>
+                <a href="exhibition.html" class="nut-bam">EXPLORE NOW &rarr;</a>
+            </section>
+        </main>
+
+        <footer id="lien-he">
+            <p><strong>Nhóm thực hiện:</strong> Dammetinhoc &mdash; <strong>Lớp:</strong> 12A4 &mdash; <strong>Năm thực hiện:</strong> 2026</p>
+            <p><strong>Liên hệ:</strong> contact@thelittlemuseum.edu.vn</p>
+        </footer>
+    </div>
+</body>
+</html>
