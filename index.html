@@ -1,94 +1,587 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE LITTLE MUSEUM | Sảnh Vào &amp; Triển Lãm</title>
-   </head>
-<body style=" background-color: #FBF0D8;
-            color: #3D1534;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.65;">
-    <header>
-        <h1 style="font-family: Times New Roman, Times, serif;
-            color: #3E4B8E">THE LITTLE MUSEUM</h1>
-        <nav>
-            <ul style="list-style-type:square">
-                <li><a style="color: #3D1534" href="index.html">HOME</a></li>
-                <li><a style="color: #3D1534" href="#gioi-thieu">ABOUT</a></li>
-                <li><a style="color: #3D1534" href="#trien-lam">EXHIBITION</a></li>
-                <li><a style="color: #3D1534" href="#lien-he">CONTACT</a></li>
-            </ul>
-        </nav>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phòng 02: Nguyễn Hoàng Dung | THE LITTLE MUSEUM</title>
+  <style>
+    :root {
+      --poster-white: #f7f7f5;
+      --poster-black: #0e0e10;
+      --poster-gray: #525256;
+      --poster-light-gray: #d8d8d4;
+      --accent-red: #b02a29;
+      --accent-navy: #3e4b8e;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #161618;
+      color: var(--poster-black);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.5;
+      padding: 28px 14px 64px;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Tờ poster profile đồng bộ với sảnh chính */
+    .poster-sheet {
+      position: relative;
+      width: 100%;
+      max-width: 780px;
+      background: var(--poster-white);
+      padding: 22px 22px 24px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65);
+      border: 1px solid #2b2b2e;
+      overflow: hidden;
+    }
+
+    /* Lớp hạt film / dither toàn poster */
+    .poster-sheet::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: radial-gradient(rgba(14, 14, 16, 0.14) 0.7px, transparent 0.7px);
+      background-size: 3px 3px;
+      opacity: 0.45;
+      z-index: 6;
+    }
+
+    .top-strip {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--poster-gray);
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .poster-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .poster-nav a {
+      text-decoration: none;
+      color: var(--poster-black);
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 1px;
+    }
+
+    .poster-nav a:hover {
+      border-bottom-color: var(--poster-black);
+    }
+
+    /* ==================== 1. KHUNG ẢNH CHÂN DUNG LỚN TRÊN CÙNG ==================== */
+    .hero-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      background: var(--poster-black);
+      border: 2px solid var(--poster-black);
+      overflow: hidden;
+    }
+
+    .hero-frame img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      filter: grayscale(100%) contrast(1.55) brightness(0.94);
+    }
+
+    .hero-overlay-bar {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 7px 12px;
+      background: rgba(14, 14, 16, 0.84);
+      color: var(--poster-white);
+      font-size: 10px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    /* ==================== 2. DẢI 4 Ô NHẢY NHANH CÁC MỤC ==================== */
+    .filmstrip-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .film-cell {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-decoration: none;
+      background: var(--poster-black);
+      color: var(--poster-white);
+      border: 2px solid var(--poster-black);
+      padding: 8px 9px;
+      min-height: 68px;
+      transition: background 0.18s ease, color 0.18s ease;
+    }
+
+    .film-cell:hover {
+      background: var(--poster-white);
+      color: var(--poster-black);
+    }
+
+    .film-cell__code {
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      opacity: 0.75;
+    }
+
+    .film-cell__label {
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    /* ==================== 3. TIÊU ĐỀ LỚN TRÁI + CREDIT PHẢI ==================== */
+    .poster-headline-block {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 16px;
+      align-items: start;
+      margin-top: 14px;
+      padding-bottom: 12px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .main-poster-title {
+      font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+      font-size: clamp(32px, 6vw, 54px);
+      font-weight: 800;
+      line-height: 0.94;
+      letter-spacing: -1.2px;
+      color: var(--poster-black);
+      text-transform: uppercase;
+    }
+
+    .main-poster-title .sub-line {
+      display: block;
+      font-size: clamp(20px, 3.6vw, 32px);
+      letter-spacing: -0.6px;
+      margin-top: 3px;
+    }
+
+    .credit-column {
+      text-align: right;
+      font-size: 11px;
+      line-height: 1.38;
+      color: var(--poster-black);
+      font-weight: 600;
+      padding-top: 4px;
+    }
+
+    .credit-column p {
+      margin-bottom: 2px;
+    }
+
+    .credit-column strong {
+      font-weight: 800;
+    }
+
+    /* ==================== 4. KHỐI NỘI DUNG TRÊN NỀN HẠT PHIM ==================== */
+    .poster-bottom-collage {
+      position: relative;
+      margin-top: 6px;
+      border: 2px solid var(--poster-black);
+      background: var(--poster-black);
+      overflow: hidden;
+      z-index: 2;
+    }
+
+    .bottom-grain-bg {
+      position: relative;
+      padding: 18px 16px 16px;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(247, 247, 245, 0.97) 0%,
+          rgba(247, 247, 245, 0.88) 52%,
+          rgba(20, 20, 23, 0.88) 78%,
+          rgba(14, 14, 16, 0.97) 100%
+        ),
+        repeating-radial-gradient(circle at 30% 40%, #111 0, #111 1px, #d8d8d4 1px, #d8d8d4 2px);
+      background-size: 100% 100%, 6px 6px;
+    }
+
+    .overlay-copy-line {
+      position: relative;
+      z-index: 2;
+      font-size: 11.5px;
+      font-weight: 700;
+      line-height: 1.45;
+      color: var(--poster-black);
+      margin-bottom: 12px;
+      text-shadow: 0 0 8px var(--poster-white), 0 0 4px var(--poster-white);
+    }
+
+    .profile-panels-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .plate-card {
+      background: rgba(247, 247, 245, 0.95);
+      border: 1.5px solid var(--poster-black);
+      padding: 11px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .plate-card--full {
+      grid-column: 1 / -1;
+    }
+
+    .plate-card h2 {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--poster-black);
+      padding-bottom: 4px;
+      margin-bottom: 6px;
+    }
+
+    .plate-card ul {
+      padding-left: 16px;
+      font-size: 11.5px;
+      line-height: 1.45;
+    }
+
+    .plate-card li {
+      margin-bottom: 3px;
+    }
+
+    .plate-card p,
+    .plate-card blockquote {
+      font-size: 11.5px;
+      line-height: 1.45;
+    }
+
+    .plate-thumb-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .plate-thumb-row img {
+      width: 56px;
+      height: 68px;
+      object-fit: cover;
+      border: 1px solid var(--poster-black);
+      filter: grayscale(100%) contrast(1.55);
+      flex-shrink: 0;
+    }
+
+    /* Bảng gọn đẹp giữ nguyên border / cấu trúc gốc */
+    .plate-card table {
+      width: 100%;
+      background: #ffffff;
+      font-size: 11px;
+    }
+
+    .plate-card th,
+    .plate-card td {
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .plate-card th {
+      text-align: center;
+      background: #ecece8;
+    }
+
+    .plate-card hr {
+      border: none;
+      border-top: 1px solid var(--poster-black);
+      margin: 3px 0;
+    }
+
+    .plate-card a {
+      color: var(--accent-navy);
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 1px dotted currentColor;
+    }
+
+    .plate-card a:hover {
+      color: var(--accent-red);
+    }
+
+    .back-row {
+      margin-top: 8px;
+      padding-top: 6px;
+      border-top: 1px dashed rgba(14, 14, 16, 0.35);
+      font-size: 11px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    /* Dải chân poster đen đậm */
+    .poster-bottom-bar {
+      position: relative;
+      z-index: 2;
+      margin-top: 12px;
+      padding: 8px 12px;
+      background: var(--poster-black);
+      color: var(--poster-white);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      font-size: 10px;
+      letter-spacing: 1.2px;
+    }
+
+    @media (max-width: 680px) {
+      .poster-sheet {
+        padding: 14px 12px 16px;
+      }
+      .filmstrip-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .poster-headline-block {
+        grid-template-columns: 1fr;
+      }
+      .credit-column {
+        text-align: left;
+      }
+      .profile-panels-grid {
+        grid-template-columns: 1fr;
+      }
+      .plate-card--full {
+        grid-column: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="poster-sheet">
+    <div class="top-strip">
+      <span>THE LITTLE MUSEUM // ROOM 02</span>
+      <nav class="poster-nav" aria-label="Điều hướng chính">
+        <a href="../index.html"><b>HOME</b></a>
+        <a href="../index.html#gioi-thieu"><b>ABOUT</b></a>
+        <a href="../index.html#trien-lam"><b>EXHIBITION</b></a>
+        <a href="#loi-ket"><b>CONTACT</b></a>
+      </nav>
+    </div>
+
+    <!-- 1. KHUNG ẢNH CHÂN DUNG LỚN TRÊN CÙNG -->
+    <header class="hero-frame" aria-label="PHÒNG 02 — NGUYỄN HOÀNG DUNG">
+      <img src="https://pngup.com/ZdWb/848c5e509add1a8343cc.jpg" alt="Nguyễn Hoàng Dung" width="200" />
+      <div class="hero-overlay-bar">
+        <span>PHÒNG 02 &mdash; NGUYỄN HOÀNG DUNG</span>
+        <span>11/07/2009 &bull; 12A4</span>
+      </div>
     </header>
 
-    <hr>
+    <!-- 2. DẢI 4 Ô NHẢY NHANH CÁC MỤC -->
+    <div class="filmstrip-row" aria-label="Điều hướng nhanh mục hồ sơ">
+      <a class="film-cell" href="#chan-dung">
+        <span class="film-cell__code">SEC // 01-02</span>
+        <span class="film-cell__label">Chân dung &amp; Bản sắc</span>
+      </a>
+      <a class="film-cell" href="#so-thich">
+        <span class="film-cell__code">SEC // 03</span>
+        <span class="film-cell__label">Sở thích</span>
+      </a>
+      <a class="film-cell" href="#bo-suu-tap">
+        <span class="film-cell__code">SEC // 04</span>
+        <span class="film-cell__label">Bộ sưu tập</span>
+      </a>
+      <a class="film-cell" href="#triet-ly">
+        <span class="film-cell__code">SEC // 05-06</span>
+        <span class="film-cell__label">Triết lý &amp; Lời kết</span>
+      </a>
+    </div>
 
-    <main>
-        <section id="mo-dau">
-            <h2 style="font-family: Times New Roman, Times, serif;
-            color: #3E4B8E">THE ENTRANCE &mdash; SẢNH VÀO</h2>
-            <p><em>"Ba cá thể, ba thế giới khác biệt"</em></p>
-            <figure>
-                <img src="meo.jpg" alt="Ảnh chung của ba thành viên" width="320">
-            <figcaption> <em> Ba cá thể, ba góc nhìn tạo nên không gian triển lãm này.</em> </figcaption>
-            </figure>
-        </section>
+    <!-- 3. TIÊU ĐỀ LỚN TRÁI + KHỐI THÔNG TIN CĂN LỀ PHẢI -->
+    <div class="poster-headline-block">
+      <h1 class="main-poster-title" style="font-family: Times New Roman , Times, serif;">
+        PHÒNG 02
+        <span class="sub-line">&mdash; NGUYỄN HOÀNG DUNG</span>
+      </h1>
 
-        <hr>
+      <aside class="credit-column" aria-label="Thông tin nhanh thành viên">
+        <p><strong>Họ và tên:</strong> Nguyễn Hoàng Dung</p>
+        <p><strong>Ngày sinh:</strong> 11/07/2009</p>
+        <p><strong>Vai trò:</strong> Lên ý tưởng cấu trúc &amp; Kỹ thuật</p>
+        <p><strong>Bảo tàng:</strong> THE LITTLE MUSEUM</p>
+      </aside>
+    </div>
 
-        <section id="gioi-thieu">
-            <h2 style="font-family: Times New Roman, Times, serif;
-            color: #3E4B8E">VỀ BẢO TÀNG</h2>
-            <p><strong>Ý tưởng:</strong> Mỗi con người là một bảo tàng thu nhỏ lưu giữ ký ức và dấu ấn cá nhân.</p>
-            <p><strong>Mục đích &amp; Thông điệp:</strong> Kết nối và tôn vinh màu sắc riêng biệt của từng thành viên trong nhóm.</p>
-        </section>
+    <!-- 4. ĐOẠN NỘI DUNG TRÊN NỀN HẠT PHIM + CÁC MỤC PROFILE -->
+    <main class="poster-bottom-collage">
+      <div class="bottom-grain-bg">
+        <p class="overlay-copy-line" style="color:#b02a29">
+          <em><b>Chỉ sợ trời phật không thương chứ sợ gì người thường không nể?</b></em>
+        </p>
 
-        <hr>
+        <div class="profile-panels-grid">
+          <!-- 1. CHÂN DUNG + 2. BẢN SẮC -->
+          <section id="chan-dung" class="plate-card">
+            <div>
+              <h2 style="font-family: Times New Roman , Times, serif; color: #3E4B8E;">
+                1. CHÂN DUNG &mdash; Thông tin cơ bản
+              </h2>
+              <div class="plate-thumb-row">
+                <img src="https://pngup.com/ZdWb/848c5e509add1a8343cc.jpg" alt="Nguyễn Hoàng Dung" width="200" />
+                <ul style="list-style-type:square">
+                  <li><strong>Họ và tên:</strong> Nguyễn Hoàng Dung</li>
+                  <li><strong>Ngày sinh:</strong> 11/07/2009</li>
+                  <li><strong>Vai trò:</strong> Lên ý tưởng cấu trúc &amp; Kỹ thuật</li>
+                </ul>
+              </div>
+            </div>
 
-        <section id="trien-lam">
-            <h2 style="font-family: Times New Roman, Times, serif;
-            color: #3E4B8E">THE GALLERY &mdash; KHU VỰC TRIỂN LÃM</h2>
-            <p style="color:#b02a29"> <em> Chọn một cánh cửa để bước vào không gian cá nhân của từng thành viên.</em> </p>
+            <div id="ban-sac" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed rgba(14, 14, 16, 0.3);">
+              <h2 style="font-family: Times New Roman , Times, serif; color: #3E4B8E;">
+                2. BẢN SẮC &mdash; ĐỘC TÔN
+              </h2>
+              <p style="color:#b02a29">
+                <em><b>Chỉ sợ trời phật không thương chứ sợ gì người thường không nể?</b></em>
+              </p>
+            </div>
+          </section>
 
-            <article>
-                <h3 style="font-family: Times New Roman, Times, serif;
-            color: #3E4B8E">Triển lãm số 01 &ndash; Nguyễn Hoài Thương</h3>
-                <img src="hth.jpg" alt="Nguyễn Hoài Thương" width="160">
-                <p><strong>Chủ đề:</strong> Người quan sát trầm lặng</p>
-                <p><strong>Mô tả ngắn:</strong><em> I=Snve</em></p>
-                <p><a href="members/member1.html">VÀO PHÒNG 01 &rarr;</a></p>
-            </article>
+          <!-- 3. SỞ THÍCH -->
+          <section id="so-thich" class="plate-card">
+            <div>
+              <h2 style="font-family: Times New Roman , Times, serif; color: #3E4B8E;">3. SỞ THÍCH</h2>
+              <table border="3" cellpadding="6" cellspacing="0" style="color:#113047">
+                <tr>
+                  <th rowspan="2">Sở thích</th>
+                  <th colspan="3">Đề mục</th>
+                </tr>
+                <tr>
+                  <th>Món ăn <hr> PHỞ</th>
+                  <th>Giải trí <hr> ÂM NHẠC</th>
+                  <th>Thể Thao <hr> NGỦ</th>
+                </tr>
+              </table>
+            </div>
+          </section>
 
-            <hr>
+          <!-- 4. BỘ SƯU TẬP -->
+          <section id="bo-suu-tap" class="plate-card plate-card--full">
+            <h2 style="font-family: Times New Roman , Times, serif; color: #3E4B8E;">
+              4. BỘ SƯU TẬP &mdash; Kỷ niệm và tác phẩm yêu thích
+            </h2>
+            <table border="3" cellpadding="6" cellspacing="0" style="color:#113047">
+              <tr>
+                <th>Mục</th>
+                <th>Loại</th>
+                <th>Ghi chú</th>
+              </tr>
+              <tr>
+                <td>Oyasumi PunPun</td>
+                <td>Tác phẩm truyện tranh ấn tượng</td>
+                <td>...</td>
+              </tr>
+              <tr>
+                <td>Voicemail 2</td>
+                <td>Bài nhạc yêu thích</td>
+                <td>Ấn tượng bởi giai điệu</td>
+              </tr>
+              <tr>
+                <td>Dự án Web <b>THE LITTLE MUSEUM</b></td>
+                <td>Tác phẩm trưng bày</td>
+                <td>Sản phẩm trang web đầu tiên</td>
+              </tr>
+            </table>
+          </section>
 
-            <article>
-                <h3 style="font-family: Times New Roman, Times, serif;
-            color: #3E4B8E">Triển lãm số 02 &ndash; Nguyễn Hoàng Dung</h3>
-                <img src="https://pngup.com/ZdWb/848c5e509add1a8343cc.jpg" alt="Nguyễn Hoàng Dung" width="160">
-                <p><strong>Chủ đề:</strong> Người nhà đẳng</p>
-                <p><strong>Mô tả ngắn:</strong> Chỉ sợ trời phật không thương chứ sợ gì người thường không nể? </p>
-                <p><a style="color: #3D1534" href="members/member2.html">VÀO PHÒNG 02 &rarr;</a></p>
-            </article>
+          <!-- 5. TRIẾT LÝ SỐNG -->
+          <section id="triet-ly" class="plate-card">
+            <div>
+              <h2 style="font-family: Times New Roman , Times, serif; color: #3E4B8E;">
+                5. TRIẾT LÝ SỐNG &mdash; Quan điểm, mục tiêu và định hướng
+              </h2>
+              <blockquote style="color:#b02a29; font-size:13px">
+                <em><b>"Tâm dẫn đầu các pháp, tâm làm chủ, tâm tạo"</b></em>
+              </blockquote>
+              <p style="color:#3D1534; margin-top: 6px;">
+                <strong>Mục tiêu &amp; định hướng:</strong> Chăn êm nệm ấm tiền đủ bụng no
+              </p>
+            </div>
+          </section>
 
-            <hr>
+          <!-- 6. LỜI KẾT -->
+          <section id="loi-ket" class="plate-card">
+            <div>
+              <h2 style="font-family: Times New Roman , Times, serif; color: #3E4B8E;">6. LỜI KẾT</h2>
+              <ul style="list-style-type:square">
+                <li><b>Instagram:</b> <a href="https://www.instagram.com/h00n.11u_/">h00n.11u_</a></li>
+                <li><b>Facebook:</b> <a href="https://www.facebook.com/abcdef00ijklmnop/?locale=fr_FR">Nguyễn Hoàng</a></li>
+              </ul>
+              <p style="margin-top: 6px;">
+                <em>"Đời người chỉ sống có một lần. Phải sống sao cho khỏi xót xa, ân hận vì những năm tháng đã sống hoài, sống phí"</em>
+              </p>
+            </div>
 
-            <article>
-                <h3  style="font-family: Times New Roman, Times, serif;
-            color: #3E4B8E">Triển lãm số 03 &ndash; Trương Vệ Kiện</h3>
-                <img src="images/member3.jpg" alt="Trương Vệ Kiện" width="160">
-                <p><strong>Chủ đề:</strong> Nhà giả kim sắc màu</p>
-                <p><strong>Mô tả ngắn:</strong> [Điền mô tả ngắn của Vệ Kiện]</p>
-                <p><a style="color: #3D1534" href="members/member3.html">VÀO PHÒNG 03 &rarr;</a></p>
-            </article>
-        </section>
+            <div class="back-row">
+              <a style="color: #3D1534" href="../index.html#trien-lam">&larr; Quay lại Khu Triển Lãm</a>
+              <span>|</span>
+              <a style="color: #3D1534" href="../index.html">Quay về Trang Chủ &rarr;</a>
+            </div>
+          </section>
+        </div>
+
+        <footer class="poster-bottom-bar">
+          <p>THE LITTLE MUSEUM &copy; 2026 &mdash; Nhóm Dammetinhoc | Lớp 12A4</p>
+          <span>ROOM 02 // ARCHIVE</span>
+        </footer>
+      </div>
     </main>
-
-    <hr>
-
-    <footer id="lien-he">
-        <p><strong>Nhóm thực hiện:</strong> Dammetinhoc &mdash; <strong>Lớp:</strong> 12A4 &mdash; <strong>Năm thực hiện:</strong> 2026</p>
-        <p><strong>Liên hệ:</strong> contact@thelittlemuseum.edu.vn</p>
-    </footer>
+  </div>
 </body>
 </html>
