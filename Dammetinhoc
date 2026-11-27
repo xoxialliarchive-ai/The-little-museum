@@ -1,0 +1,406 @@
+mkdir -p THE-LITTLE-MUSEUM/members THE-LITTLE-MUSEUM/images && cd THE-LITTLE-MUSEUM
+
+cat << 'EOF' > index.html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE LITTLE MUSEUM | The Entrance</title>
+</head>
+<body>
+    <header>
+        <h1>THE LITTLE MUSEUM</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="exhibition.html">EXHIBITION</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+        <hr>
+    </header>
+    <main>
+        <section id="hero">
+            <h2>THE LITTLE MUSEUM</h2>
+            <p><em>"Three Individuals, Three Different Worlds"</em></p>
+            <figure>
+                <img src="images/group-photo.jpg" alt="Ảnh chung của ba thành viên sáng lập The Little Museum" width="800">
+                <figcaption>Ba cá thể, ba góc nhìn tạo nên không gian triển lãm này.</figcaption>
+            </figure>
+            <hr>
+        </section>
+        <section id="about">
+            <h2>ABOUT THE MUSEUM</h2>
+            <p><strong>Ý tưởng:</strong> Mỗi con người là một bảo tàng thu nhỏ, nơi lưu giữ những ký ức, đam mê và triết lý sống riêng biệt. <em>The Little Museum</em> được ra đời để mở cửa những thế giới nội tâm đó.</p>
+            <p><strong>Mục đích &amp; Thông điệp:</strong> Website là nơi kết nối và tôn vinh sự khác biệt. Dù mang ba màu sắc đối lập, khi đặt cạnh nhau, chúng tạo nên một bức tranh tổng thể hài hòa và đầy cảm hứng.</p>
+            <hr>
+        </section>
+        <section id="exhibition-preview">
+            <h2>ENTER THE EXHIBITION</h2>
+            <p>Explore three different worlds through the stories of three individuals.</p>
+            <p><a href="exhibition.html"><strong>EXPLORE NOW &rarr;</strong></a></p>
+            <hr>
+        </section>
+    </main>
+    <footer id="contact">
+        <p><strong>Nhóm thực hiện:</strong> Nhóm Dammetinhoc &mdash; <strong>Lớp:</strong> 12A4</p>
+        <p><strong>Năm thực hiện:</strong> 2026</p>
+        <p><strong>Thông tin liên hệ:</strong> contact@thelittlemuseum.edu.vn </p>
+    </footer>
+</body>
+</html>
+EOF
+
+cat << 'EOF' > exhibition.html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE GALLERY | The Little Museum</title>
+</head>
+<body>
+    <header>
+        <h1>THE LITTLE MUSEUM</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="index.html#about">ABOUT</a></li>
+                <li><a href="exhibition.html">EXHIBITION</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+        <hr>
+    </header>
+    <main>
+        <section>
+            <h2>THE GALLERY &mdash; KHU VỰC TRIỂN LÃM CHÍNH</h2>
+            <p>Chào mừng bạn đến với hành lang trưng bày. Hãy chọn một cánh cửa để bước vào thế giới của từng thành viên.</p>
+            <hr>
+        </section>
+        <article>
+            <h3>Exhibition No. 01 &ndash; Nguyễn Hoài Thương </h3>
+            <img src="images/member1.jpg" alt="Chân dung Nguyễn Hoài Thương" width="250">
+            <p><strong>Chủ đề phòng trưng bày:</strong> <em>The Quiet Observer (Người quan sát)</em></p>
+            <p><strong>Mô tả ngắn:</strong> Tiểu sử. </p>
+            <p><a href="members/member1.html"><strong>BƯỚC VÀO PHÒNG TRIỂN LÃM 01 &rarr;</strong></a></p>
+            <hr>
+        </article>
+        <article>
+            <h3>Exhibition No. 02 &ndash;Nguyễn Hoàng Dung</h3>
+            <img src="images/member2.jpg" alt="Chân dung Nguyễn Hoàng Dung" width="250">
+            <p><strong>Chủ đề phòng trưng bày:</strong> <em>The Rhythm Maker (Người tạo nhịp điệu)</em></p>
+            <p><strong>Mô tả ngắn:</strong> Tiểu sử </p>
+            <p><a href="members/member2.html"><strong>BƯỚC VÀO PHÒNG TRIỂN LÃM 02 &rarr;</strong></a></p>
+            <hr>
+        </article>
+        <article>
+            <h3>Exhibition No. 03 &ndash; Trương Vệ Kiện </h3>
+            <img src="images/member3.jpg" alt="Chân dung Trương Vệ Kiện" width="250">
+            <p><strong>Chủ đề phòng trưng bày:</strong> <em>The Color Alchemist (Nhà giả kim sắc màu)</em></p>
+            <p><strong>Mô tả ngắn:</strong> Tiểu sử .</p>
+            <p><a href="members/member3.html"><strong>BƯỚC VÀO PHÒNG TRIỂN LÃM 03 &rarr;</strong></a></p>
+            <hr>
+        </article>
+    </main>
+    <footer id="contact">
+        <p><a href="index.html">&larr; Quay lại sảnh chính (The Entrance)</a></p>
+        <p><strong>Nhóm thực hiện:</strong> Nhóm The Curators &mdash; <strong>Lớp:</strong> 12A4 &mdash; <strong>Năm:</strong> 2026</p>
+        <p><strong>Liên hệ:</strong> contact@thelittlemuseum.edu.vn</p>
+    </footer>
+</body>
+</html>
+EOF
+
+cat << 'EOF' > members/member1.html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room 01: Nguyễn Hoài Thương | The Little Museum</title>
+</head>
+<body>
+    <header>
+        <h1>THE LITTLE MUSEUM &mdash; ROOM 01</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="../index.html#about">ABOUT</a></li>
+                <li><a href="../exhibition.html">EXHIBITION</a></li>
+                <li><a href="#end-note">CONTACT</a></li>
+            </ul>
+        </nav>
+        <hr>
+    </header>
+    <main>
+        <section id="portrait">
+            <h2>1. THE PORTRAIT &mdash; Giới thiệu cơ bản</h2>
+            <img src="../images/member1.jpg" alt="Chân dung Nguyễn Hoài Thương" width="300">
+            <ul>
+                <li><strong>Họ và tên:</strong> Nguyễn Hoài Thương </li>          
+                <li><strong>Vai trò trong nhóm:</strong> Biên tập nội dung &amp; Tạo trang web</li>
+            </ul>
+            <hr>
+        </section>
+        <section id="identity">
+            <h2>2. THE IDENTITY &mdash; Tính cách và đặc điểm cá nhân</h2>
+            <p> Văn bản ...... </p>
+            <hr>
+        </section>
+        <section id="interests">
+            <h2>3. THE INTERESTS &mdash; Sở thích</h2>
+            <ul>
+                <li>Đọc tiểu thuyết văn học cổ điển và tản văn.</li>
+                <li>Chụp ảnh đường phố bằng máy ảnh phim 35mm.</li>
+                <li>Sưu tầm tem thư và các loại trà thảo mộc.</li>
+                <li>Viết nhật ký tay vào mỗi buổi tối.</li>
+            </ul>
+            <hr>
+        </section>
+        <section id="collection">
+            <h2>4. THE COLLECTION &mdash; Kỷ vật &amp; Tác phẩm yêu thích</h2>
+            <table border="1" cellpadding="10" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Hiện vật / Tác phẩm</th>
+                        <th>Loại hình</th>
+                        <th>Ý nghĩa lưu giữ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Chiếc máy ảnh Minolta X-700</td>
+                        <td>Kỷ vật cá nhân</td>
+                        <td>Món quà sinh nhật năm 16 tuổi, lưu giữ hơn 20 cuộn phim thanh xuân.</td>
+                    </tr>
+                    <tr>
+                        <td>Hoàng Tử Bé (Antoine de Saint-Exupéry)</td>
+                        <td>Sách yêu thích</td>
+                        <td>Cuốn sách nhắc nhở cách nhìn thế giới bằng trái tim trong trẻo.</td>
+                    </tr>
+                    <tr>
+                        <td>Bức ảnh "Chiều mưa Đà Lạt"</td>
+                        <td>Tác phẩm tự chụp</td>
+                        <td>Bức ảnh đầu tiên được chọn trưng bày tại câu lạc bộ nhiếp ảnh trường.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+        </section>
+        <section id="philosophy">
+            <h2>5. THE PHILOSOPHY &mdash; Quan điểm sống &amp; Định hướng tương lai</h2>
+            <blockquote>"Đi chậm lại để nhìn rõ hơn con đường mình đang bước, thay vì chạy thật nhanh mà quên mất lý do bắt đầu."</blockquote>
+            <p><strong>Mục tiêu tương lai:</strong> Theo đuổi ngành Báo chí - Truyền thông hoặc Xuất bản, trở thành một người kể chuyện bằng ngôn từ và hình ảnh chân thực.</p>
+            <hr>
+        </section>
+        <section id="end-note">
+            <h2>6. THE END NOTE &mdash; Lời kết</h2>
+            <p>Cảm ơn bạn đã dành thời gian ghé thăm căn phòng nhỏ của Hoài Thương. Hy vọng những mẩu chuyện tại đây mang lại cho bạn một chút bình yên.</p>
+            <p>
+                <a href="../exhibition.html">&larr; Quay lại Phòng Triển Lãm Chung (The Gallery)</a> | 
+                <a href="../index.html">Quay về Trang Chủ (The Entrance) &rarr;</a>
+            </p>
+            <hr>
+        </section>
+    </main>
+    <footer>
+        <p>THE LITTLE MUSEUM &copy; 2026 &mdash; Nhóm The Curators | Lớp 12A4</p>
+    </footer>
+</body>
+</html>
+EOF
+
+cat << 'EOF' > members/member2.html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room 02: Nguyễn Hoàng Dung | The Little Museum</title>
+</head>
+<body>
+    <header>
+        <h1>THE LITTLE MUSEUM &mdash; ROOM 02</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="../index.html#about">ABOUT</a></li>
+                <li><a href="../exhibition.html">EXHIBITION</a></li>
+                <li><a href="#end-note">CONTACT</a></li>
+            </ul>
+        </nav>
+        <hr>
+    </header>
+    <main>
+        <section id="portrait">
+            <h2>1. THE PORTRAIT &mdash; Giới thiệu cơ bản</h2>
+            <img src="../images/member2.jpg" alt="Chân dung Nguyễn Hoàng Dung" width="300">
+            <ul>
+                <li><strong>Họ và tên:</strong> Nguyễn Hoàng Dung</li>
+                <li><strong>Vai trò trong nhóm:</strong> Lên ý tưởng cấu trúc &amp; Kỹ thuật</li>
+            </ul>
+            <hr>
+        </section>
+        <section id="identity">
+            <h2>2. THE IDENTITY &mdash; Tính cách và đặc điểm cá nhân</h2>
+            <p> Văn bản ... </p>
+            <hr>
+        </section>
+        <section id="interests">
+            <h2>3. THE INTERESTS &mdash; Sở thích</h2>
+            <ul>
+                <li>Lập trình sáng tạo và khám phá công nghệ mới.</li>
+                <li>Chơi guitar điện và phối khí nhạc Lo-fi / Synthwave.</li>
+                <li>Chạy bộ đường dài và đạp xe khám phá các cung đường mới.</li>
+                <li>Xem phim khoa học viễn tưởng (Sci-Fi).</li>
+            </ul>
+            <hr>
+        </section>
+        <section id="collection">
+            <h2>4. THE COLLECTION &mdash; Kỷ vật &amp; Tác phẩm yêu thích</h2>
+            <table border="1" cellpadding="10" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Hiện vật / Tác phẩm</th>
+                        <th>Loại hình</th>
+                        <th>Ý nghĩa lưu giữ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Bản nhạc "Midnight Code"</td>
+                        <td>Tác phẩm âm nhạc</td>
+                        <td>Bản beat đầu tiên tự phối khí hoàn chỉnh vào lúc 2 giờ sáng.</td>
+                    </tr>
+                    <tr>
+                        <td>Phim Interstellar (Christopher Nolan)</td>
+                        <td>Điện ảnh yêu thích</td>
+                        <td>Nguồn cảm hứng bất tận về khoa học, thời gian và tình cảm gia đình.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+        </section>
+        <section id="philosophy">
+            <h2>5. THE PHILOSOPHY &mdash; Quan điểm sống &amp; Định hướng tương lai</h2>
+            <blockquote>"Đừng sợ thất bại khi thử nghiệm cái mới; điều đáng tiếc nhất là đứng yên nhìn thế giới thay đổi."</blockquote>
+            <p><strong>Mục tiêu tương lai:</strong> Trở thành Kỹ sư Phần mềm hoặc Nhà phát triển sản phẩm công nghệ, tạo ra những ứng dụng hữu ích kết nối giáo dục và nghệ thuật.</p>
+            <hr>
+        </section>
+        <section id="end-note">
+            <h2>6. THE END NOTE &mdash; Lời kết</h2>
+            <p>Cảm ơn bạn đã bước qua thế giới đầy nhịp điệu của Hoàng Dung. Chúc bạn luôn giữ được ngọn lửa nhiệt huyết trên hành trình của riêng mình!</p>
+            <p>
+                <a href="../exhibition.html">&larr; Quay lại Phòng Triển Lãm Chung (The Gallery)</a> | 
+                <a href="../index.html">Quay về Trang Chủ (The Entrance) &rarr;</a>
+            </p>
+            <hr>
+        </section>
+    </main>
+    <footer>
+        <p>THE LITTLE MUSEUM &copy; 2026 &mdash; Nhóm The Curators | Lớp 12A4</p>
+    </footer>
+</body>
+</html>
+EOF
+
+cat << 'EOF' > members/member3.html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room 03: Trương Vệ Kiện | The Little Museum</title>
+</head>
+<body>
+    <header>
+        <h1>THE LITTLE MUSEUM &mdash; ROOM 03</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="../index.html#about">ABOUT</a></li>
+                <li><a href="../exhibition.html">EXHIBITION</a></li>
+                <li><a href="#end-note">CONTACT</a></li>
+            </ul>
+        </nav>
+        <hr>
+    </header>
+    <main>
+        <section id="portrait">
+            <h2>1. THE PORTRAIT &mdash; Giới thiệu cơ bản</h2>
+            <img src="../images/member3.jpg" alt="Chân dung Trương Vệ Kiện" width="300">
+            <ul>
+                <li><strong>Họ và tên:</strong> Trương Vệ Kiện </li>
+                <li><strong>Vai trò trong nhóm:</strong> Giám tuyển hình ảnh &amp; Thẩm mỹ</li>
+            </ul>
+            <hr>
+        </section>
+        <section id="identity">
+            <h2>2. THE IDENTITY &mdash; Tính cách và đặc điểm cá nhân</h2>
+            <p> Văn bản </p>
+            <hr>
+        </section>
+        <section id="interests">
+            <h2>3. THE INTERESTS &mdash; Sở thích</h2>
+            <ul>
+                <li>Vẽ tranh màu nước và ký họa phong cảnh.</li>
+                <li>Làm đồ thủ công tái chế (DIY) và cắm hoa nghệ thuật.</li>
+                <li>Tham quan các bảo tàng mỹ thuật và triển lãm đương đại.</li>
+            </ul>
+            <hr>
+        </section>
+        <section id="collection">
+            <h2>4. THE COLLECTION &mdash; Kỷ vật &amp; Tác phẩm yêu thích</h2>
+            <table border="1" cellpadding="10" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Hiện vật / Tác phẩm</th>
+                        <th>Loại hình</th>
+                        <th>Ý nghĩa lưu giữ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cuốn sổ phác thảo (Sketchbook) bìa vải</td>
+                        <td>Kỷ vật cá nhân</td>
+                        <td>Lưu giữ hơn 50 bức ký họa về góc sân trường và bạn bè.</td>
+                    </tr>
+                    <tr>
+                        <td>Tranh "Hoa Diên Vĩ" (Vincent van Gogh)</td>
+                        <td>Tác phẩm yêu thích</td>
+                        <td>Nguồn động lực giúp Vy tin vào sức mạnh biểu đạt của màu sắc.</td>
+                    </tr>
+                    <tr>
+                        <td>Bộ sưu tập lá khô ép</td>
+                        <td>Kỷ vật thiên nhiên</td>
+                        <td>Thu thập từ những chuyến dã ngoại cùng gia đình qua bốn mùa.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+        </section>
+        <section id="philosophy">
+            <h2>5. THE PHILOSOPHY &mdash; Quan điểm sống &amp; Định hướng tương lai</h2>
+            <blockquote>"Sống tử tế, giữ tâm hồn cởi mở và luôn biết ơn những điều nhỏ bé xung quanh."</blockquote>
+            <p><strong>Mục tiêu tương lai:</strong> Theo đuổi ngành Thiết kế Đồ họa hoặc Kiến trúc Nội thất, kiến tạo những không gian sống xanh và giàu tính nghệ thuật.</p>
+            <hr>
+        </section>
+        <section id="end-note">
+            <h2>6. THE END NOTE &mdash; Lời kết</h2>
+            <p>Cảm ơn bạn đã ghé thăm góc triển lãm đầy sắc màu của Vệ Kiện. Mong rằng bạn sẽ luôn tìm thấy niềm vui và cảm hứng sáng tạo mỗi ngày!</p>
+            <p>
+                <a href="../exhibition.html">&larr; Quay lại Phòng Triển Lãm Chung (The Gallery)</a> | 
+                <a href="../index.html">Quay về Trang Chủ (The Entrance) &rarr;</a>
+            </p>
+            <hr>
+        </section>
+    </main>
+    <footer>
+        <p>THE LITTLE MUSEUM &copy; 2026 &mdash; Nhóm The Curators | Lớp 12A1</p>
+    </footer>
+</body>
+</html>
+EOF
