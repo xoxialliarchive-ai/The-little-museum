@@ -6,162 +6,105 @@
     <title>Phòng 01: Nguyễn Hoài Thương | THE LITTLE MUSEUM</title>
     <style>
         body {
-            margin: 0; padding: 24px;
+            background-color: #1f1912;
+            color: #f7f3eb;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #2c241b;
-            background: linear-gradient(-45deg, #17130e, #2b2218, #1f1912, #36291b);
-            background-size: 400% 400%;
-            animation: anhSangBaoTang 14s ease infinite;
-            min-height: 100vh; line-height: 1.65;
-            overflow-x: hidden; position: relative;
+            line-height: 1.65;
         }
-        @keyframes anhSangBaoTang {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        h1, h2 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: #f7e6c4;
         }
-        .khung-bui { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
-        .hat-bui {
-            position: absolute; bottom: -12px;
-            background: radial-gradient(circle, rgba(255, 226, 138, 0.95) 0%, rgba(212, 175, 55, 0) 72%);
-            border-radius: 50%; animation: bayLen linear infinite;
+        a {
+            color: #e6c27a;
         }
-        @keyframes bayLen {
-            0% { transform: translateY(0) translateX(0) scale(0.8); opacity: 0; }
-            20% { opacity: 0.9; }
-            80% { opacity: 0.65; }
-            100% { transform: translateY(-108vh) translateX(40px) scale(1.1); opacity: 0; }
-        }
-        .sanh-bao-tang {
-            position: relative; z-index: 1;
-            max-width: 820px; margin: 0 auto; background: rgba(247, 243, 235, 0.96);
-            border: 2px solid #c5a059; border-radius: 12px; padding: 32px;
-            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65), inset 0 0 0 6px rgba(197, 160, 89, 0.18);
-        }
-        header {
-            text-align: center; border-bottom: 1px solid #d4b982;
-            padding-bottom: 14px; margin-bottom: 24px;
-        }
-        h1 { font-size: 1.6em; color: #3b2a18; margin: 0 0 10px; letter-spacing: 2px; }
-        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 20px; }
-        nav a { text-decoration: none; color: #5a3f22; font-weight: bold; font-size: 0.9em; }
-        section {
-            background: #fffdf9; border: 1px solid #e2d1b0;
-            border-radius: 8px; padding: 18px 22px; margin-bottom: 16px;
-        }
-        h2 { color: #3b2a18; font-size: 1.1em; margin: 0 0 10px; border-bottom: 1px solid #eadbc0; padding-bottom: 6px; }
-        .khung-chan-dung { display: flex; gap: 20px; align-items: center; }
-        .khung-chan-dung img { width: 150px; height: 150px; object-fit: cover; border-radius: 8px; border: 1px solid #c5a059; }
-        table { width: 100%; border-collapse: collapse; margin-top: 8px; }
-        th, td { border: 1px solid #d4b982; padding: 8px 12px; text-align: left; }
-        th { background: #efe6d5; color: #3b2a18; }
-        blockquote { margin: 8px 0; padding-left: 12px; border-left: 3px solid #9c6f2c; font-style: italic; color: #5a4632; }
-        footer { text-align: center; font-size: 0.88em; color: #5a4632; margin-top: 20px; }
-        a { color: #3b2a18; font-weight: bold; }
     </style>
 </head>
 <body>
-    <div class="khung-bui" id="khung-bui"></div>
+    <header>
+        <h1>PHÒNG 01 &mdash; NGUYỄN HOÀI THƯƠNG</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="../index.html#gioi-thieu">ABOUT</a></li>
+                <li><a href="../index.html#trien-lam">EXHIBITION</a></li>
+                <li><a href="#loi-ket">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="sanh-bao-tang">
-        <header>
-            <h1>PHÒNG 01 &mdash; NGUYỄN HOÀI THƯƠNG</h1>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">HOME</a></li>
-                    <li><a href="../index.html#gioi-thieu">ABOUT</a></li>
-                    <li><a href="../exhibition.html">EXHIBITION</a></li>
-                    <li><a href="#loi-ket">CONTACT</a></li>
-                </ul>
-            </nav>
-        </header>
+    <hr>
 
-        <main>
-            <section id="chan-dung">
-                <h2>1. CHÂN DUNG &mdash; Thông tin cơ bản</h2>
-                <div class="khung-chan-dung">
-                    <img src="../images/member1.jpg" alt="Nguyễn Hoài Thương">
-                    <ul>
-                        <li><strong>Họ và tên:</strong> Nguyễn Hoài Thương</li>
-                        <li><strong>Ngày sinh:</strong> [Ngày/Tháng/Năm]</li>
-                        <li><strong>Vai trò:</strong> Biên tập nội dung &amp; Tạo trang web</li>
-                    </ul>
-                </div>
-            </section>
+    <main>
+        <section id="chan-dung">
+            <h2>1. CHÂN DUNG &mdash; Thông tin cơ bản</h2>
+            <img src="../images/member1.jpg" alt="Nguyễn Hoài Thương" width="160">
+            <ul>
+                <li><strong>Họ và tên:</strong> Nguyễn Hoài Thương</li>
+                <li><strong>Ngày sinh:</strong> [Ngày/Tháng/Năm]</li>
+                <li><strong>Vai trò:</strong> Biên tập nội dung &amp; Tạo trang web</li>
+            </ul>
+        </section>
 
-            <section id="ban-sac">
-                <h2>2. BẢN SẮC &mdash; Tính cách và đặc điểm</h2>
-                <p>[Thông tin tính cách và đặc điểm cơ bản của Hoài Thương]</p>
-            </section>
+        <section id="ban-sac">
+            <h2>2. BẢN SẮC &mdash; Tính cách và đặc điểm</h2>
+            <p>[Thông tin tính cách và đặc điểm cơ bản của Hoài Thương]</p>
+        </section>
 
-            <section id="so-thich">
-                <h2>3. SỞ THÍCH</h2>
-                <ul>
-                    <li>[Sở thích 1]</li>
-                    <li>[Sở thích 2]</li>
-                    <li>[Sở thích 3]</li>
-                </ul>
-            </section>
+        <section id="so-thich">
+            <h2>3. SỞ THÍCH</h2>
+            <ul>
+                <li>[Sở thích 1]</li>
+                <li>[Sở thích 2]</li>
+                <li>[Sở thích 3]</li>
+            </ul>
+        </section>
 
-            <section id="bo-suu-tap">
-                <h2>4. BỘ SƯU TẬP &mdash; Kỷ niệm và tác phẩm yêu thích</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Mục</th>
-                            <th>Loại</th>
-                            <th>Ghi chú</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>[Tên kỷ niệm / tác phẩm 1]</td>
-                            <td>[Kỷ niệm / Sách / Ảnh]</td>
-                            <td>[Ghi chú ngắn]</td>
-                        </tr>
-                        <tr>
-                            <td>[Tên kỷ niệm / tác phẩm 2]</td>
-                            <td>[Kỷ niệm / Sách / Ảnh]</td>
-                            <td>[Ghi chú ngắn]</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
+        <section id="bo-suu-tap">
+            <h2>4. BỘ SƯU TẬP &mdash; Kỷ niệm và tác phẩm yêu thích</h2>
+            <table border="1" cellpadding="6" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Mục</th>
+                        <th>Loại</th>
+                        <th>Ghi chú</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>[Tên kỷ niệm / tác phẩm 1]</td>
+                        <td>[Kỷ niệm / Sách / Ảnh]</td>
+                        <td>[Ghi chú ngắn]</td>
+                    </tr>
+                    <tr>
+                        <td>[Tên kỷ niệm / tác phẩm 2]</td>
+                        <td>[Kỷ niệm / Sách / Ảnh]</td>
+                        <td>[Ghi chú ngắn]</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
-            <section id="triet-ly">
-                <h2>5. TRIẾT LÝ SỐNG &mdash; Quan điểm, mục tiêu và định hướng</h2>
-                <blockquote>"[Quan điểm sống / câu nói yêu thích]"</blockquote>
-                <p><strong>Mục tiêu &amp; định hướng:</strong> [Mục tiêu học tập / tương lai]</p>
-            </section>
+        <section id="triet-ly">
+            <h2>5. TRIẾT LÝ SỐNG &mdash; Quan điểm, mục tiêu và định hướng</h2>
+            <blockquote>"[Quan điểm sống / câu nói yêu thích]"</blockquote>
+            <p><strong>Mục tiêu &amp; định hướng:</strong> [Mục tiêu học tập / tương lai]</p>
+        </section>
 
-            <section id="loi-ket">
-                <h2>6. LỜI KẾT</h2>
-                <p>[Lời kết ngắn gọn]</p>
-                <p>
-                    <a href="../exhibition.html">&larr; Quay lại Phòng Trưng Bày</a> | 
-                    <a href="../index.html">Quay về Trang Chủ &rarr;</a>
-                </p>
-            </section>
-        </main>
+        <section id="loi-ket">
+            <h2>6. LỜI KẾT</h2>
+            <p>[Lời kết ngắn gọn]</p>
+            <p>
+                <a href="../index.html#trien-lam">&larr; Quay lại Khu Triển Lãm</a> |
+                <a href="../index.html">Quay về Trang Chủ &rarr;</a>
+            </p>
+        </section>
+    </main>
 
-        <footer>
-            <p>THE LITTLE MUSEUM &copy; 2026 &mdash; Nhóm Dammetinhoc | Lớp 12A4</p>
-        </footer>
-    </div>
+    <hr>
 
-    <script>
-        const khungBui = document.getElementById("khung-bui");
-        for (let i = 0; i < 32; i++) {
-            const hat = document.createElement("span");
-            hat.className = "hat-bui";
-            const kichThuoc = Math.random() * 5 + 3;
-            hat.style.width = kichThuoc + "px";
-            hat.style.height = kichThuoc + "px";
-            hat.style.left = Math.random() * 100 + "%";
-            hat.style.animationDuration = (Math.random() * 8 + 7) + "s";
-            hat.style.animationDelay = (Math.random() * 8) + "s";
-            khungBui.appendChild(hat);
-        }
-    </script>
+    <footer>
+        <p>THE LITTLE MUSEUM &copy; 2026 &mdash; Nhóm Dammetinhoc | Lớp 12A4</p>
+    </footer>
 </body>
 </html>
