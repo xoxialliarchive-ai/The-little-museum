@@ -1,773 +1,124 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Phòng 02: Nguyễn Hoàng Dung | THE LITTLE MUSEUM</title>
-  <style>
-    :root {
-      --bg-ocean-deep: #154c79;
-      --bg-ocean-mid: #2b7bba;
-      --bg-sand: #efe7d6;
-      --paper-light: #f8fafc;
-      --paper-tint: #eef5fb;
-      --folder-tab: #d8c7a8;
-      --ink-dark: #0f2942;
-      --ink-muted: #47627c;
-      --line-dark: #16324f;
-      --line-soft: #c5d6e6;
-      --accent-goldfish: #d96b27;
-      --accent-amber: #e59a3c;
-      --accent-red: #b02a29;
-      --accent-navy: #1e4e8c;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      color: var(--ink-dark);
-      line-height: 1.65;
-      min-height: 100vh;
-      padding: 28px 14px 64px;
-      background:
-        radial-gradient(circle at 12% 18%, rgba(229, 154, 60, 0.24) 0%, transparent 32%),
-        radial-gradient(circle at 88% 26%, rgba(217, 107, 39, 0.26) 0%, transparent 36%),
-        radial-gradient(circle at 22% 82%, rgba(217, 107, 39, 0.22) 0%, transparent 34%),
-        radial-gradient(circle at 84% 84%, rgba(229, 154, 60, 0.22) 0%, transparent 36%),
-        linear-gradient(165deg, #164870 0%, #2a78b5 38%, #67add8 70%, #e8dec8 100%);
-      background-attachment: fixed;
-    }
-
-    .page-shell {
-      max-width: 920px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-    }
-
-    /* ==================== PHẦN ĐẦU: BÌA FOLDER NHƯ ẢNH 1 ==================== */
-    .hero-folder {
-      position: relative;
-      background: var(--paper-light);
-      border-radius: 6px 18px 14px 14px;
-      border-top: 26px solid var(--folder-tab);
-      border-left: 1.5px solid var(--line-dark);
-      border-right: 1.5px solid var(--line-dark);
-      border-bottom: 1.5px solid var(--line-dark);
-      padding: 28px 32px 22px;
-      box-shadow: 0 18px 40px rgba(10, 32, 54, 0.35);
-    }
-
-    .folder-ear-tab {
-      position: absolute;
-      top: -46px;
-      right: 26px;
-      background: var(--folder-tab);
-      color: var(--ink-dark);
-      font-family: Georgia, "Times New Roman", Times, serif;
-      font-style: italic;
-      font-size: 13px;
-      padding: 5px 22px 4px;
-      border-radius: 10px 10px 0 0;
-      border-top: 1.5px solid var(--line-dark);
-      border-left: 1.5px solid var(--line-dark);
-      border-right: 1.5px solid var(--line-dark);
-    }
-
-    .folder-meta-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      font-size: 12px;
-      color: var(--ink-muted);
-      margin-bottom: 14px;
-    }
-
-    .folder-main-grid {
-      display: grid;
-      grid-template-columns: 1fr 170px;
-      gap: 24px;
-      align-items: center;
-      padding-bottom: 18px;
-    }
-
-    .script-portfolio {
-      font-family: "Snell Roundhand", "Brush Script MT", "Lucida Handwriting", cursive, Georgia, serif;
-      font-size: clamp(54px, 10vw, 92px);
-      line-height: 0.92;
-      color: var(--accent-navy);
-      font-weight: 400;
-    }
-
-    .cover-stamp-title {
-      margin-top: 8px;
-      margin-left: 28%;
-      font-family: Georgia, "Times New Roman", Times, serif;
-      font-size: clamp(20px, 3.4vw, 30px);
-      font-weight: 700;
-      color: var(--ink-dark);
-      letter-spacing: 0.6px;
-      line-height: 1.2;
-    }
-
-    .cover-stamp-title span {
-      color: var(--accent-goldfish);
-    }
-
-    .clipped-avatar {
-      position: relative;
-      background: #ffffff;
-      padding: 7px 7px 14px;
-      border: 1px solid var(--line-soft);
-      box-shadow: 0 8px 18px rgba(15, 41, 66, 0.18);
-      transform: rotate(2.5deg);
-    }
-
-    .clip-wire {
-      position: absolute;
-      top: -12px;
-      left: 18px;
-      width: 14px;
-      height: 30px;
-      border: 2px solid var(--accent-navy);
-      border-radius: 999px;
-      transform: rotate(-18deg);
-      z-index: 2;
-    }
-
-    .clipped-avatar img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      filter: grayscale(100%) contrast(1.15);
-    }
-
-    .clipped-avatar__label {
-      margin-top: 7px;
-      font-size: 10.5px;
-      text-align: center;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: var(--accent-goldfish);
-    }
-
-    .cover-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 24px;
-      padding: 12px 0;
-      border-top: 1px dashed var(--line-soft);
-      border-bottom: 1px dashed var(--line-soft);
-    }
-
-    .cover-nav a {
-      text-decoration: none;
-      color: var(--ink-dark);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 3px 8px;
-      border-radius: 3px;
-      transition: background 0.15s ease, color 0.15s ease;
-    }
-
-    .cover-nav a:hover {
-      background: var(--accent-goldfish);
-      color: #ffffff;
-    }
-
-    .cover-info-strip {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 10px;
-      margin-top: 14px;
-      font-size: 12.5px;
-      color: var(--ink-muted);
-    }
-
-    /* ==================== PHẦN THÔNG TIN: BỐ CỤC NHƯ ẢNH 2 ==================== */
-    .editorial-book {
-      background: var(--paper-light);
-      border: 1.5px solid var(--line-dark);
-      box-shadow: 0 16px 36px rgba(10, 32, 54, 0.3);
-    }
-
-    .book-topbar {
-      display: grid;
-      grid-template-columns: 165px 1fr 165px;
-      align-items: center;
-      background: var(--ink-dark);
-      color: var(--paper-light);
-      font-size: 11px;
-      letter-spacing: 1.3px;
-      text-transform: uppercase;
-    }
-
-    .book-topbar__cell {
-      padding: 10px 14px;
-    }
-
-    .book-topbar__cell--left {
-      border-right: 1px solid rgba(255, 255, 255, 0.22);
-      font-weight: 700;
-      color: var(--accent-amber);
-    }
-
-    .book-topbar__cell--center {
-      text-align: center;
-      font-family: Georgia, "Times New Roman", Times, serif;
-      font-size: 13px;
-      letter-spacing: 2px;
-    }
-
-    .book-topbar__cell--right {
-      border-left: 1px solid rgba(255, 255, 255, 0.22);
-      text-align: right;
-    }
-
-    .sheet-row {
-      display: grid;
-      grid-template-columns: 1fr 62px;
-      border-bottom: 1.5px solid var(--line-dark);
-    }
-
-    .sheet-row:last-of-type {
-      border-bottom: none;
-    }
-
-    .sheet-content {
-      padding: 26px 30px;
-      border-right: 1.5px solid var(--line-dark);
-    }
-
-    .sheet-spine {
-      writing-mode: vertical-rl;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--paper-tint);
-      color: var(--accent-navy);
-      font-family: Georgia, "Times New Roman", Times, serif;
-      font-size: 12.5px;
-      font-weight: 700;
-      letter-spacing: 4.5px;
-      text-transform: uppercase;
-      user-select: none;
-    }
-
-    .sheet-spine--warm {
-      background: #fdf4e7;
-      color: var(--accent-goldfish);
-    }
-
-    .sec-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 12px;
-      border-bottom: 1.5px solid var(--line-dark);
-      padding-bottom: 7px;
-      margin-bottom: 16px;
-    }
-
-    .sec-header h2 {
-      font-family: Georgia, "Times New Roman", Times, serif;
-      font-size: 17px;
-      color: var(--accent-navy);
-      letter-spacing: 0.6px;
-    }
-
-    .sec-header .sec-tag {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1.6px;
-      color: var(--accent-goldfish);
-      font-weight: 700;
-    }
-
-    /* Khung About me & Profile kiểu ảnh 2 */
-    .about-banner {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-
-    .about-script-title {
-      font-family: Georgia, "Times New Roman", Times, serif;
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--ink-dark);
-    }
-
-    .about-script-title .star {
-      color: var(--accent-goldfish);
-    }
-
-    .about-subnote {
-      font-size: 12px;
-      color: var(--ink-muted);
-    }
-
-    .two-col-profile {
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 24px;
-      align-items: start;
-    }
-
-    .spec-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 13.5px;
-    }
-
-    .spec-table td {
-      padding: 9px 6px;
-      border-bottom: 1px solid var(--line-soft);
-      vertical-align: top;
-    }
-
-    .spec-table td.spec-key {
-      width: 115px;
-      color: var(--ink-muted);
-      font-size: 12.5px;
-    }
-
-    .spec-table td.spec-val {
-      font-weight: 600;
-      color: var(--ink-dark);
-    }
-
-    .portrait-card-box {
-      border: 1px solid var(--line-dark);
-      background: #ffffff;
-      padding: 8px;
-    }
-
-    .portrait-card-box__top {
-      display: flex;
-      justify-content: space-between;
-      font-size: 10.5px;
-      color: var(--ink-muted);
-      margin-bottom: 6px;
-      letter-spacing: 0.7px;
-    }
-
-    .portrait-card-box img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      filter: grayscale(100%) contrast(1.12);
-    }
-
-    .portrait-card-box__caption {
-      margin-top: 7px;
-      text-align: center;
-      font-family: Georgia, "Times New Roman", Times, serif;
-      font-size: 12px;
-      color: var(--ink-dark);
-    }
-
-    .quote-strip {
-      margin-top: 10px;
-      padding: 13px 16px;
-      background: #fdf5ea;
-      border-left: 3.5px solid var(--accent-goldfish);
-    }
-
-    .quote-strip p,
-    .quote-strip blockquote {
-      color: var(--accent-red);
-      font-size: 15px;
-      line-height: 1.5;
-    }
-
-    /* Bảng sở thích & bộ sưu tập */
-    .table-scroll {
-      overflow-x: auto;
-    }
-
-    table.data-grid {
-      width: 100%;
-      border-collapse: collapse;
-      border: 2px solid var(--line-dark);
-      font-size: 13.5px;
-      background: #ffffff;
-    }
-
-    table.data-grid th,
-    table.data-grid td {
-      border: 1px solid var(--line-dark);
-      padding: 9px 12px;
-      text-align: left;
-      vertical-align: middle;
-    }
-
-    table.data-grid th {
-      background: var(--paper-tint);
-      font-family: Georgia, "Times New Roman", Times, serif;
-      color: var(--accent-navy);
-      text-align: center;
-    }
-
-    table.data-grid th hr {
-      border: none;
-      border-top: 1px solid var(--line-soft);
-      margin: 5px 0;
-    }
-
-    .goal-text {
-      margin-top: 12px;
-      font-size: 14px;
-      color: var(--ink-dark);
-    }
-
-    .contact-split {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 20px;
-      align-items: start;
-    }
-
-    .social-list {
-      list-style: square;
-      padding-left: 18px;
-      font-size: 14px;
-    }
-
-    .social-list li {
-      margin-bottom: 6px;
-    }
-
-    .social-list a {
-      color: var(--accent-navy);
-      font-weight: 700;
-      text-decoration: none;
-      border-bottom: 1px solid currentColor;
-    }
-
-    .social-list a:hover {
-      color: var(--accent-goldfish);
-    }
-
-    .farewell-quote {
-      font-family: Georgia, "Times New Roman", Times, serif;
-      font-style: italic;
-      font-size: 14px;
-      color: var(--ink-muted);
-      padding: 12px 14px;
-      background: var(--paper-tint);
-      border: 1px solid var(--line-soft);
-    }
-
-    .footer-nav {
-      margin-top: 16px;
-      padding-top: 12px;
-      border-top: 1px dashed var(--line-soft);
-      font-size: 13px;
-    }
-
-    .footer-nav a {
-      color: var(--accent-navy);
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .footer-nav a:hover {
-      color: var(--accent-goldfish);
-      text-decoration: underline;
-    }
-
-    .site-footer {
-      background: var(--ink-dark);
-      color: var(--paper-light);
-      padding: 13px 24px;
-      font-size: 12px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .site-footer__badge {
-      color: var(--accent-amber);
-      font-family: Georgia, "Times New Roman", Times, serif;
-      font-style: italic;
-      font-size: 14px;
-    }
-
-    @media (max-width: 740px) {
-      .folder-main-grid,
-      .two-col-profile,
-      .contact-split {
-        grid-template-columns: 1fr;
-      }
-      .clipped-avatar {
-        max-width: 180px;
-        margin: 0 auto;
-      }
-      .cover-stamp-title {
-        margin-left: 0;
-      }
-      .book-topbar {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .book-topbar__cell--left,
-      .book-topbar__cell--right {
-        border: none;
-        text-align: center;
-      }
-      .sheet-row {
-        grid-template-columns: 1fr;
-      }
-      .sheet-content {
-        border-right: none;
-        padding: 20px 18px;
-      }
-      .sheet-spine {
-        writing-mode: horizontal-tb;
-        padding: 7px 12px;
-        border-top: 1px solid var(--line-dark);
-        letter-spacing: 3px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title >Phòng 02: Nguyễn Hoàng Dung | THE LITTLE MUSEUM</title>
+  <body style=" background-color: #FBF0D8;
+            color: #3D1534;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.65"> 
+            </body>
 </head>
 <body>
-  <div class="page-shell">
-    <!-- ==================== PHẦN ĐẦU: ẢNH 1 ==================== -->
-    <header class="hero-folder">
-      <div class="folder-ear-tab">Lên ý tưởng cấu trúc &amp; Kỹ thuật</div>
-
-      <div class="folder-meta-row">
-        <span>Phòng 02 &mdash; THE LITTLE MUSEUM</span>
-        <span>11/07/2009</span>
-      </div>
-
-      <div class="folder-main-grid">
-        <div>
-          <div class="script-portfolio">Portfolio</div>
-          <h1 class="cover-stamp-title">
-            2026 &middot; <span>NGUYỄN HOÀNG DUNG</span>
-          </h1>
-        </div>
-
-        <div class="clipped-avatar">
-          <div class="clip-wire" aria-hidden="true"></div>
-          <img src="https://pngup.com/ZdWb/848c5e509add1a8343cc.jpg" alt="Nguyễn Hoàng Dung" />
-          <div class="clipped-avatar__label">1. CHÂN DUNG</div>
-        </div>
-      </div>
-
-      <nav class="cover-nav" aria-label="Điều hướng">
-        <a href="../index.html"><b>HOME</b></a>
-        <a href="../index.html#gioi-thieu"><b>ABOUT</b></a>
-        <a href="../index.html#trien-lam"><b>EXHIBITION</b></a>
-        <a href="#loi-ket"><b>CONTACT</b></a>
-      </nav>
-
-      <div class="cover-info-strip">
-        <span><strong>Họ và tên:</strong> Nguyễn Hoàng Dung &bull; <strong>Ngày sinh:</strong> 11/07/2009</span>
-        <span><strong>Vai trò:</strong> Lên ý tưởng cấu trúc &amp; Kỹ thuật</span>
-      </div>
+    <header>
+        <h1 style="font-family: Times New Roman , Times, serif; color: #3E4B8E;">
+        PHÒNG 02 &mdash; NGUYỄN HOÀNG DUNG
+        </h1>
+        <nav>
+            <ul style="list-style-type:square">
+                <li><a style="color: #3D1534" href="../index.html"><b> HOME </b></a></li>
+                <li><a style="color: #3D1534" href="../index.html#gioi-thieu"> <b>ABOUT</b> </a></li>
+                <li><a style="color: #3D1534" href="../index.html#trien-lam"><b> EXHIBITION </b></a>
+                </li>
+                <li><a style="color: #3D1534" href="#loi-ket"> <b> CONTACT </b> </a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- ==================== PHẦN THÔNG TIN: ẢNH 2 + PHỐI MÀU ẢNH 3 ==================== -->
-    <main class="editorial-book">
-      <div class="book-topbar">
-        <div class="book-topbar__cell book-topbar__cell--left">THE LITTLE MUSEUM</div>
-        <div class="book-topbar__cell book-topbar__cell--center">ROOM 02 * PROFILE</div>
-        <div class="book-topbar__cell book-topbar__cell--right">LỚP 12A4</div>
-      </div>
+    <hr>
 
-      <!-- Khối 1 & 2: Chân dung + Bản sắc -->
-      <section id="chan-dung" class="sheet-row">
-        <div class="sheet-content">
-          <div class="about-banner">
-            <div class="about-script-title">About me <span class="star">*</span></div>
-            <div class="about-subnote">Phòng 02 &mdash; Nguyễn Hoàng Dung</div>
-          </div>
-
-          <div class="sec-header">
+    <main>
+        <section id="chan-dung">
             <h2 style="font-family: Times New Roman , Times, serif; color: #3E4B8E;">
-              1. CHÂN DUNG &mdash; Thông tin cơ bản
+            1. CHÂN DUNG &mdash; Thông tin cơ bản
             </h2>
-            <span class="sec-tag">Profile</span>
-          </div>
+            <img src="https://pngup.com/ZdWb/848c5e509add1a8343cc.jpg" alt="Nguyễn Hoàng Dung" width="200">
+            <ul style="list-style-type:square">
+                <li><strong>Họ và tên:</strong> Nguyễn Hoàng Dung</li>
+                <li><strong>Ngày sinh:</strong> 11/07/2009</li>
+                <li><strong>Vai trò:</strong> Lên ý tưởng cấu trúc &amp; Kỹ thuật</li>
+            </ul>
+        </section>
 
-          <div class="two-col-profile">
-            <table class="spec-table">
-              <tr>
-                <td class="spec-key">Họ và tên</td>
-                <td class="spec-val">Nguyễn Hoàng Dung</td>
-              </tr>
-              <tr>
-                <td class="spec-key">Ngày sinh</td>
-                <td class="spec-val">11/07/2009</td>
-              </tr>
-              <tr>
-                <td class="spec-key">Vai trò</td>
-                <td class="spec-val">Lên ý tưởng cấu trúc &amp; Kỹ thuật</td>
-              </tr>
-            </table>
-
-            <div class="portrait-card-box">
-              <div class="portrait-card-box__top">
-                <span>ARCHIVE</span>
-                <span>11/07/2009</span>
-              </div>
-              <img src="https://pngup.com/ZdWb/848c5e509add1a8343cc.jpg" alt="Nguyễn Hoàng Dung" width="200" />
-              <div class="portrait-card-box__caption">&lt;Nguyễn Hoàng Dung&gt;</div>
-            </div>
-          </div>
-
-          <div id="ban-sac" style="margin-top: 24px;">
-            <div class="sec-header">
-              <h2 style="font-family: Times New Roman , Times, serif; color: #3E4B8E;">
-                2. BẢN SẮC &mdash; ĐỘC TÔN
-              </h2>
-              <span class="sec-tag">Identity</span>
-            </div>
-            <div class="quote-strip">
-              <p style="color:#b02a29"><em><b>Chỉ sợ trời phật không thương chứ sợ gì người thường không nể?</b></em></p>
-            </div>
-          </div>
-        </div>
-
-        <aside class="sheet-spine" aria-hidden="true">PORT * FOLIO</aside>
-      </section>
-
-      <!-- Khối 3 & 4: Sở thích + Bộ sưu tập -->
-      <section id="so-thich" class="sheet-row">
-        <div class="sheet-content">
-          <div class="sec-header">
-            <h2 style="font-family: Times New Roman , Times, serif; color: #3E4B8E;">3. SỞ THÍCH</h2>
-            <span class="sec-tag">Favorites</span>
-          </div>
-
-          <div class="table-scroll">
-            <table class="data-grid" border="3" cellpadding="6" cellspacing="0" style="color:#113047">
-              <tr>
-                <th rowspan="2">Sở thích</th>
-                <th colspan="3">Đề mục</th>
-              </tr>
-              <tr>
-                <th>Món ăn <hr> PHỞ</th>
-                <th>Giải trí <hr> ÂM NHẠC</th>
-                <th>Thể Thao <hr> NGỦ</th>
-              </tr>
-            </table>
-          </div>
-
-          <div id="bo-suu-tap" style="margin-top: 24px;">
-            <div class="sec-header">
-              <h2 style="font-family: Times New Roman , Times, serif; color: #3E4B8E;">
-                4. BỘ SƯU TẬP &mdash; Kỷ niệm và tác phẩm yêu thích
-              </h2>
-              <span class="sec-tag">Collection</span>
-            </div>
-
-            <div class="table-scroll">
-              <table class="data-grid" border="3" cellpadding="6" cellspacing="0" style="color:#113047">
-                <tr>
-                  <th>Mục</th>
-                  <th>Loại</th>
-                  <th>Ghi chú</th>
-                </tr>
-                <tr>
-                  <td>Oyasumi PunPun</td>
-                  <td>Tác phẩm truyện tranh ấn tượng</td>
-                  <td>...</td>
-                </tr>
-                <tr>
-                  <td>Voicemail 2</td>
-                  <td>Bài nhạc yêu thích</td>
-                  <td>Ấn tượng bởi giai điệu</td>
-                </tr>
-                <tr>
-                  <td>Dự án Web <b>THE LITTLE MUSEUM</b></td>
-                  <td>Tác phẩm trưng bày</td>
-                  <td>Sản phẩm trang web đầu tiên</td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-
-        <aside class="sheet-spine sheet-spine--warm" aria-hidden="true">CURATED * NOTES</aside>
-      </section>
-
-      <!-- Khối 5 & 6: Triết lý sống + Lời kết -->
-      <section id="triet-ly" class="sheet-row">
-        <div class="sheet-content">
-          <div class="sec-header">
+        <section id="ban-sac">
             <h2 style="font-family: Times New Roman , Times, serif; color: #3E4B8E;">
-              5. TRIẾT LÝ SỐNG &mdash; Quan điểm, mục tiêu và định hướng
+            2. BẢN SẮC &mdash; ĐỘC TÔN
             </h2>
-            <span class="sec-tag">Mindset</span>
-          </div>
+            <p style="color:#b02a29"> <em> <b> Chỉ sợ trời phật không thương chứ sợ gì người thường không nể? </b> </em> </p>
+        </section>
 
-          <div class="quote-strip">
-            <blockquote style="color:#b02a29; font-size:17px">
-              <em><b>"Tâm dẫn đầu các pháp, tâm làm chủ, tâm tạo"</b></em>
-            </blockquote>
-          </div>
-          <p class="goal-text" style="color:#3D1534">
-            <strong>Mục tiêu &amp; định hướng:</strong> Chăn êm nệm ấm tiền đủ bụng no
-          </p>
+        <section id="so-thich">
+            <h2 style="font-family: Times New Roman , Times, serif; color: #3E4B8E;">
+            3. SỞ THÍCH</h2>
+<table border="3" cellpadding="6" cellspacing="0" style="color:#113047" >
+<tr> <th rowspan="2"> Sở thích </th>
+<th colspan="3"> Đề mục</th> </tr>
+<tr> <th> Món ăn <hr> PHỞ </th> 
+<th> Giải trí <hr> ÂM NHẠC </th>
+<th> Thể Thao <hr> NGỦ </th> 
+</tr>
+</table>
+        </section>
 
-          <div id="loi-ket" style="margin-top: 24px;">
-            <div class="sec-header">
-              <h2 style="font-family: Times New Roman , Times, serif; color: #3E4B8E;">6. LỜI KẾT</h2>
-              <span class="sec-tag">Contact</span>
-            </div>
+        <section id="bo-suu-tap">
+            <h2 style="font-family: Times New Roman , Times, serif; color: #3E4B8E;">
+            4. BỘ SƯU TẬP &mdash; Kỷ niệm và tác phẩm yêu thích</h2>
+            <table border="3" cellpadding="6" cellspacing="0" style="color:#113047" >
+              
+                    <tr>
+                        <th>Mục</th>
+                        <th>Loại</th>
+                        <th>Ghi chú</th>
+                    </tr>
+              
+              
+                    <tr>
+                        <td> Oyasumi PunPun </td>
+                        <td> Tác phẩm truyện tranh ấn tượng </td>
+                        <td> ... </td>
+                    </tr>
+                    <tr>
+                        <td> Voicemail 2</td>
+                        <td> Bài nhạc yêu thích </td>
+                        <td>Ấn tượng bởi giai điệu </td>
+                      
+                    </tr>
+                    <tr> 
+                    <td>Dự án Web <b> THE LITTLE MUSEUM </b> </td>
+                        <td>Tác phẩm trưng bày</td>
+                        <td>Sản phẩm trang web đầu tiên</td>
+                        </tr>
+              
+            </table>
+        </section>
 
-            <div class="contact-split">
-              <ul class="social-list" style="list-style-type:square">
-                <li><b>Instagram:</b> <a href="https://www.instagram.com/h00n.11u_/">h00n.11u_</a></li>
-                <li><b>Facebook:</b> <a href="https://www.facebook.com/abcdef00ijklmnop/?locale=fr_FR">Nguyễn Hoàng</a></li>
-              </ul>
+        <section id="triet-ly">
+            <h2 style="font-family: Times New Roman , Times, serif; color: #3E4B8E;">
+            5. TRIẾT LÝ SỐNG &mdash; Quan điểm, mục tiêu và định hướng</h2>
+            <blockquote style="color:#b02a29; font-size:17"> <em> <b> "Tâm dẫn đầu các pháp, tâm làm chủ, tâm tạo"</b> </em> </blockquote>
+            <p style="color:#3D1534"><strong>Mục tiêu &amp; định hướng:</strong> Chăn êm nệm ấm tiền đủ bụng no </p>
+        </section>
 
-              <p class="farewell-quote">
-                <em>"Đời người chỉ sống có một lần. Phải sống sao cho khỏi xót xa, ân hận vì những năm tháng đã sống hoài, sống phí"</em>
-              </p>
-            </div>
-
-            <p class="footer-nav">
-              <a style="color: #3D1534" href="../index.html#trien-lam">&larr; Quay lại Khu Triển Lãm</a> |
-              <a style="color: #3D1534" href="../index.html">Quay về Trang Chủ &rarr;</a>
+        <section id="loi-ket">
+            <h2 style="font-family: Times New Roman , Times, serif; color: #3E4B8E;">6. LỜI KẾT</h2>
+           <ul style="list-style-type:square"> 
+            <li> <b> Instagram: </b> <a href="https://www.instagram.com/h00n.11u_/"> h00n.11u_ </a> </li>
+            <li> <b> Facebook: </b> <a href="https://www.facebook.com/abcdef00ijklmnop/?locale=fr_FR"> Nguyễn Hoàng </a> </li>
+            </ul>
+            <p> <em> "Đời người chỉ sống có một lần. Phải sống sao cho khỏi xót xa, ân hận vì những năm tháng đã sống hoài, sống phí" </em> </p>
+            <p>
+                <a style="color: #3D1534" href="../index.html#trien-lam">&larr; Quay lại Khu Triển Lãm</a> |
+                <a style="color: #3D1534" href="../index.html">Quay về Trang Chủ &rarr;</a>
             </p>
-          </div>
-        </div>
-
-        <aside class="sheet-spine" aria-hidden="true">THANK * YOU</aside>
-      </section>
-
-      <footer class="site-footer">
-        <p>THE LITTLE MUSEUM &copy; 2026 &mdash; Nhóm Dammetinhoc | Lớp 12A4</p>
-        <span class="site-footer__badge">Room 02 &middot; Archive</span>
-      </footer>
+        </section>
     </main>
-  </div>
+
+    <hr>
+
+    <footer>
+        <p>THE LITTLE MUSEUM &copy; 2026 &mdash; Nhóm Dammetinhoc | Lớp 12A4</p>
+    </footer>
 </body>
 </html>
