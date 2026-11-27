@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE GALLERY | Phòng Trưng Bày</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 24px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #2c241b;
+            background: #1f1912;
+            line-height: 1.65;
+        }
+        .sanh-bao-tang {
+            max-width: 820px;
+            margin: 0 auto;
+            background: #f7f3eb;
+            border: 2px solid #c5a059;
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65);
+        }
+        header {
+            text-align: center;
+            border-bottom: 1px solid #d4b982;
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+        }
+        h1 {
+            font-size: 1.8em;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #3b2a18;
+            margin: 0 0 12px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #5a3f22;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        nav a:hover { color: #9c6f2c; }
+        .loi-mo-trien-lam { text-align: center; margin-bottom: 24px; }
+        .the-thanh-vien {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            background: #fffdf9;
+            border: 1px solid #d4b982;
+            border-left: 5px solid #9c6f2c;
+            border-radius: 8px;
+            padding: 18px;
+            margin-bottom: 18px;
+        }
+        .the-thanh-vien img {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 1px solid #c5a059;
+        }
+        .thong-tin-thanh-vien h3 { margin: 0 0 6px; color: #3b2a18; }
+        .thong-tin-thanh-vien p { margin: 4px 0; font-size: 0.95em; }
+        .nut-bam {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 7px 14px;
+            background: #3b2a18;
+            color: #f7e6c4;
+            border: 1px solid #c5a059;
+            border-radius: 5px;
+            font-size: 0.85em;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .nut-bam:hover { background: #5a3f22; }
+        footer {
+            border-top: 1px solid #d4b982;
+            padding-top: 16px;
+            text-align: center;
+            font-size: 0.88em;
+            color: #5a4632;
+        }
+        footer a { color: #3b2a18; font-weight: bold; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="sanh-bao-tang">
+        <header>
+            <h1>THE LITTLE MUSEUM</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="index.html#gioi-thieu">ABOUT</a></li>
+                    <li><a href="exhibition.html">EXHIBITION</a></li>
+                    <li><a href="#lien-he">CONTACT</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="loi-mo-trien-lam">
+                <h2>THE GALLERY &mdash; KHU VỰC TRIỂN LÃM</h2>
+                <p>Chọn một cánh cửa để bước vào không gian cá nhân của từng thành viên.</p>
+            </section>
+
+            <article class="the-thanh-vien">
+                <img src="images/member1.jpg" alt="Nguyễn Hoài Thương">
+                <div class="thong-tin-thanh-vien">
+                    <h3>Triển lãm số 01 &ndash; Nguyễn Hoài Thương</h3>
+                    <p><strong>Chủ đề:</strong> Người quan sát trầm lặng</p>
+                    <p><strong>Mô tả ngắn:</strong> [Điền mô tả ngắn của Hoài Thương]</p>
+                    <a href="members/member1.html" class="nut-bam">VÀO PHÒNG 01 &rarr;</a>
+                </div>
+            </article>
+
+            <article class="the-thanh-vien">
+                <img src="images/member2.jpg" alt="Nguyễn Hoàng Dung">
+                <div class="thong-tin-thanh-vien">
+                    <h3>Triển lãm số 02 &ndash; Nguyễn Hoàng Dung</h3>
+                    <p><strong>Chủ đề:</strong> Người tạo nhịp điệu</p>
+                    <p><strong>Mô tả ngắn:</strong> [Điền mô tả ngắn của Hoàng Dung]</p>
+                    <a href="members/member2.html" class="nut-bam">VÀO PHÒNG 02 &rarr;</a>
+                </div>
+            </article>
+
+            <article class="the-thanh-vien">
+                <img src="images/member3.jpg" alt="Trương Vệ Kiện">
+                <div class="thong-tin-thanh-vien">
+                    <h3>Triển lãm số 03 &ndash; Trương Vệ Kiện</h3>
+                    <p><strong>Chủ đề:</strong> Nhà giả kim sắc màu</p>
+                    <p><strong>Mô tả ngắn:</strong> [Điền mô tả ngắn của Vệ Kiện]</p>
+                    <a href="members/member3.html" class="nut-bam">VÀO PHÒNG 03 &rarr;</a>
+                </div>
+            </article>
+        </main>
+
+        <footer id="lien-he">
+            <p><a href="index.html">&larr; Quay lại Sảnh Vào</a></p>
+            <p>Nhóm Dammetinhoc &mdash; Lớp 12A4 &mdash; Năm thực hiện: 2026</p>
+            <p>Liên hệ: contact@thelittlemuseum.edu.vn</p>
+        </footer>
+    </div>
+</body>
+</html>
