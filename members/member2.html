@@ -14,6 +14,7 @@
             padding: 0;
         }
 
+        /* Ảnh bìa trải ngang full chiều rộng */
         .intro-cover {
             width: 100%;
             height: 220px;
@@ -21,145 +22,155 @@
             display: block;
         }
 
-        .intro-header {
-            max-width: 800px;
+        /* Khung bao toàn bộ nội dung nằm chính giữa màn hình */
+        .page-container {
+            max-width: 820px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px 45px 24px;
         }
 
+        /* Icon đè lên mép dưới ảnh bìa */
         .intro-icon {
             font-size: 56px;
             line-height: 1;
-            margin-top: -32px; /* Kéo icon đè lên phần dưới ảnh */
+            margin-top: -32px;
             margin-bottom: 10px;
         }
 
-        .intro-header h1 {
+        h1, h2 {
             font-family: Cambria, 'Times New Roman', serif;
             color: #3E4B8E;
             margin: 0 0 12px 0;
         }
+
+        /* Căn chỉnh danh sách gọn gàng */
+        ul {
+            padding-left: 20px;
+        }
+
+        /* Căn bảng nằm giữa khung */
+        table {
+            margin: 0 auto;
+            background-color: #FFFDF7;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
-    <!-- Phần giao diện mở đầu -->
+    <!-- Ảnh bìa mở đầu -->
     <img class="intro-cover" src="https://cdn.imagetourls.com/uploads/tyImg/OqJtpwsT.jpg" alt="woodcuts_9.jpg">
 
-    <header class="intro-header">
-        <div class="intro-icon">🍵</div>
-        <h1>PHÒNG 02 ⊹˚₊ NGUYỄN HOÀNG DUNG °‧ 𓆝 𓆟 𓆞 ·｡</h1>
-        <nav>
-            <ul style="list-style-type:none">
-                <li><a style="color: #3D1534" href="../index.html"><b>🍥 HOME</b></a></li>
-                <li><a style="color: #3D1534" href="../index.html#gioi-thieu"><b>🍥 ABOUT</b></a></li>
-                <li><a style="color: #3D1534" href="../index.html#trien-lam"><b>🍥 EXHIBITION</b></a></li>
-                <li><a style="color: #3D1534" href="#loi-ket"><b>🍥 CONTACT</b></a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Khung chính giữa -->
+    <div class="page-container">
+        <header>
+            <div class="intro-icon">🍵</div>
+            <h1>PHÒNG 02 ⊹˚₊ NGUYỄN HOÀNG DUNG °‧ 𓆝 𓆟 𓆞 ·｡</h1>
+            <nav>
+                <ul style="list-style-type:none; padding-left: 0;">
+                    <li><a style="color: #3D1534" href="../index.html"><b>🍥 HOME</b></a></li>
+                    <li><a style="color: #3D1534" href="../index.html#gioi-thieu"><b>🍥 ABOUT</b></a></li>
+                    <li><a style="color: #3D1534" href="../index.html#trien-lam"><b>🍥 EXHIBITION</b></a></li>
+                    <li><a style="color: #3D1534" href="#loi-ket"><b>🍥 CONTACT</b></a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <hr>
+        <hr>
 
-    <main>
-        <section id="chan-dung">
-            <h2 style="font-family: Cambria, 'Times New Roman', serif; color: #3E4B8E; margin: 0 0 12px 0">
-                🍜 CHÂN DUNG ⊹˚₊ THÔNG TIN CƠ BẢN °‧ 𓆝 𓆟 𓆞 ·｡
-            </h2>
-            <img src="https://pngup.com/ZdWb/848c5e509add1a8343cc.jpg" alt="Nguyễn Hoàng Dung" width="200">
-            <ul style="list-style-type:none">
-                <li><strong>🍥 Họ và tên:</strong> Nguyễn Hoàng Dung</li>
-                <li><strong>🍥 Ngày sinh:</strong> 11/07/2009</li>
-                <li><strong>🍥 Vai trò:</strong> Lên ý tưởng cấu trúc &amp; Kỹ thuật</li>
-            </ul>
-        </section>
+        <main>
+            <section id="chan-dung">
+                <h2>🍜 CHÂN DUNG ⊹˚₊ THÔNG TIN CƠ BẢN °‧ 𓆝 𓆟 𓆞 ·｡</h2>
+                <img src="https://pngup.com/ZdWb/848c5e509add1a8343cc.jpg" alt="Nguyễn Hoàng Dung" width="200">
+                <ul style="list-style-type:none; padding-left: 0;">
+                    <li><strong>🍥 Họ và tên:</strong> Nguyễn Hoàng Dung</li>
+                    <li><strong>🍥 Ngày sinh:</strong> 11/07/2009</li>
+                    <li><strong>🍥 Vai trò:</strong> Lên ý tưởng cấu trúc &amp; Kỹ thuật</li>
+                </ul>
+            </section>
 
-        <section id="ban-sac">
-            <h2 style="font-family: Cambria, 'Times New Roman', serif; color: #3E4B8E; margin: 0 0 12px 0">
-                🍜 NOTION ⊹˚₊ °‧ 𓆝 𓆟 𓆞 ·｡
-            </h2>
-            <p style="font-family: Cambria, Georgia, serif; color:#b02a29">
-                <em><b>Chỉ sợ trời phật không thương chứ sợ gì người thường không nể?</b></em>
-            </p>
-        </section>
+            <section id="ban-sac">
+                <h2>🍜 NOTION ⊹˚₊ °‧ 𓆝 𓆟 𓆞 ·｡</h2>
+                <p style="font-family: Cambria, Georgia, serif; color:#b02a29">
+                    <em><b>Chỉ sợ trời phật không thương chứ sợ gì người thường không nể?</b></em>
+                </p>
+            </section>
 
-        <section id="so-thich">
-            <h2 style="font-family: Cambria, 'Times New Roman', serif; color: #3E4B8E; margin: 0 0 12px 0">
-                <br>🍜 SỞ THÍCH ⊹˚₊ °‧ 𓆝 𓆟 𓆞 ·｡
-            </h2>
-            <table border="3" cellpadding="6" cellspacing="0" style="color:#113047">
-                <tr>
-                    <th rowspan="2">🎐Sở thích🎐</th>
-                    <th colspan="3">₊˚ʚ 🌱 ₊˚✧ ﾟ. Đề mục .ﾟ✧˚ ₊🌱ʚ˚₊</th>
-                </tr>
-                <tr>
-                    <th>Món ăn <hr> PHỞ</th>
-                    <th>Giải trí <hr> ÂM NHẠC</th>
-                    <th>Thể Thao <hr> NGỦ</th>
-                </tr>
-            </table>
-        </section>
+            <section id="so-thich">
+                <h2><br>🍜 SỞ THÍCH ⊹˚₊ °‧ 𓆝 𓆟 𓆞 ·｡</h2>
+                <table border="3" cellpadding="6" cellspacing="0" style="color:#113047">
+                    <tr>
+                        <th rowspan="2">🎐Sở thích🎐</th>
+                        <th colspan="3">₊˚ʚ 🌱 ₊˚✧ ﾟ. Đề mục .ﾟ✧˚ ₊🌱ʚ˚₊</th>
+                    </tr>
+                    <tr>
+                        <th>Món ăn <hr> PHỞ</th>
+                        <th>Giải trí <hr> ÂM NHẠC</th>
+                        <th>Thể Thao <hr> NGỦ</th>
+                    </tr>
+                </table>
+            </section>
 
-        <section id="bo-suu-tap">
-            <h2 style="font-family: Cambria, 'Times New Roman', serif; color: #3E4B8E; margin: 0 0 12px 0">
-                <br>🍜 BỘ SƯU TẬP ⊹˚₊ °‧ 𓆝 𓆟 𓆞 ·｡
-            </h2>
-            <table border="3" cellpadding="6" cellspacing="0" style="color:#113047">
-                <tr>
-                    <th>₊˚ʚ 🌱 ₊˚✧ ﾟ. Mục .ﾟ✧˚ ₊🌱ʚ˚₊</th>
-                    <th>₊˚ʚ 🌱 ₊˚✧ ﾟ. Loại .ﾟ✧˚ ₊🌱ʚ˚₊</th>
-                    <th>₊˚ʚ 🌱 ₊˚✧ ﾟ. Ghi chú .ﾟ✧˚ ₊🌱ʚ˚₊</th>
-                </tr>
-                <tr>
-                    <td>˙⋆✮ Oyasumi PunPun ✮⋆˙</td>
-                    <td>Tác phẩm truyện tranh ấn tượng</td>
-                    <td>...</td>
-                </tr>
-                <tr>
-                    <td>𝄞⨾💿✮˚.⋆Voicemail 2 ⋆.˚✮💿⨾𝄞</td>
-                    <td>Bài nhạc yêu thích</td>
-                    <td>Ấn tượng bởi giai điệu</td>
-                </tr>
-                <tr>
-                    <td>Dự án Web <b>THE LITTLE MUSEUM</b></td>
-                    <td>Tác phẩm trưng bày</td>
-                    <td>Sản phẩm trang web đầu tiên</td>
-                </tr>
-            </table>
-        </section>
+            <section id="bo-suu-tap">
+                <h2><br>🍜 BỘ SƯU TẬP ⊹˚₊ °‧ 𓆝 𓆟 𓆞 ·｡</h2>
+                <table border="3" cellpadding="6" cellspacing="0" style="color:#113047">
+                    <tr>
+                        <th>₊˚ʚ 🌱 ₊˚✧ ﾟ. Mục .ﾟ✧˚ ₊🌱ʚ˚₊</th>
+                        <th>₊˚ʚ 🌱 ₊˚✧ ﾟ. Loại .ﾟ✧˚ ₊🌱ʚ˚₊</th>
+                        <th>₊˚ʚ 🌱 ₊˚✧ ﾟ. Ghi chú .ﾟ✧˚ ₊🌱ʚ˚₊</th>
+                    </tr>
+                    <tr>
+                        <td>˙⋆✮ Oyasumi PunPun ✮⋆˙</td>
+                        <td>Tác phẩm truyện tranh ấn tượng</td>
+                        <td>...</td>
+                    </tr>
+                    <tr>
+                        <td>𝄞⨾💿✮˚.⋆Voicemail 2 ⋆.˚✮💿⨾𝄞</td>
+                        <td>Bài nhạc yêu thích</td>
+                        <td>Ấn tượng bởi giai điệu</td>
+                    </tr>
+                    <tr>
+                        <td>Dự án Web <b>THE LITTLE MUSEUM</b></td>
+                        <td>Tác phẩm trưng bày</td>
+                        <td>Sản phẩm trang web đầu tiên</td>
+                    </tr>
+                </table>
+            </section>
 
-        <section id="triet-ly">
-            <h2 style="font-family: Cambria, 'Times New Roman', serif; color: #3E4B8E; margin: 0 0 12px 0">
-                <br>🍜 TRIẾT LÝ SỐNG ⊹˚₊ °‧ 𓆝 𓆟 𓆞 ·｡
-            </h2>
-            <blockquote style="color:#b02a29; font-size:17px">
-                <em><b>"Tâm dẫn đầu các pháp, tâm làm chủ, tâm tạo"</b></em>
-            </blockquote>
-            <ul style="list-style-type:none">
-                <li style="color:#3D1534"><strong>🍥 Mục tiêu &amp; định hướng:</strong> Chăn êm nệm ấm tiền đủ bụng no</li>
-            </ul>
-        </section>
+            <section id="triet-ly">
+                <h2><br>🍜 TRIẾT LÝ SỐNG ⊹˚₊ °‧ 𓆝 𓆟 𓆞 ·｡</h2>
+                <blockquote style="color:#b02a29; font-size:17px">
+                    <em><b>"Tâm dẫn đầu các pháp, tâm làm chủ, tâm tạo"</b></em>
+                </blockquote>
+                <ul style="list-style-type:none; padding-left: 0;">
+                    <li style="color:#3D1534"><strong>🍥 Mục tiêu &amp; định hướng:</strong> Chăn êm nệm ấm tiền đủ bụng no</li>
+                </ul>
+            </section>
 
-        <section id="loi-ket">
-            <h2 style="font-family: Cambria, 'Times New Roman', serif; color: #3E4B8E; margin: 0 0 12px 0">
-                🍜 LỜI KẾT ⊹˚₊ °‧ 𓆝 𓆟 𓆞 ·｡
-            </h2>
-            <ul style="list-style-type:none">
-                <li><b>🍥 Instagram:</b> <a href="https://www.instagram.com/h00n.11u_/">⤷ ゛h00n.11u_ˎˊ˗</a></li>
-                <li><b>🍥 Facebook:</b> <a href="https://www.facebook.com/abcdef00ijklmnop/?locale=fr_FR">⤷ ゛Nguyễn Hoàngˎˊ˗</a></li>
-            </ul>
-            <p><em>"Đời người chỉ sống có một lần. Phải sống sao cho khỏi xót xa, ân hận vì những năm tháng đã sống hoài, sống phí"</em></p>
-            <p>
-                <a style="color: #3D1534" href="../index.html#trien-lam"><b>&larr; Quay lại Khu Triển Lãm</b></a> |
-                <a style="color: #3D1534" href="../index.html"><b>Quay về Trang Chủ &rarr;</b></a>
-            </p>
-        </section>
-    </main>
+            <section id="loi-ket">
+                <h2>🍜 LỜI KẾT ⊹˚₊ °‧ 𓆝 𓆟 𓆞 ·｡</h2>
+                <ul style="list-style-type:none; padding-left: 0;">
+                    <li><b>🍥 Instagram:</b> <a href="https://www.instagram.com/h00n.11u_/">⤷ ゛h00n.11u_ˎˊ˗</a></li>
+                    <li><b>🍥 Facebook:</b> <a href="https://www.facebook.com/abcdef00ijklmnop/?locale=fr_FR">⤷ ゛Nguyễn Hoàngˎˊ˗</a></li>
+                </ul>
+                <p><em>"Đời người chỉ sống có một lần. Phải sống sao cho khỏi xót xa, ân hận vì những năm tháng đã sống hoài, sống phí"</em></p>
+                <p>
+                    <a style="color: #3D1534" href="../index.html#trien-lam"><b>&larr; Quay lại Khu Triển Lãm</b></a> |
+                    <a style="color: #3D1534" href="../index.html"><b>Quay về Trang Chủ &rarr;</b></a>
+                </p>
+            </section>
+        </main>
 
-    <hr>
+        <hr>
 
-    <footer>
-        <p><b>THE LITTLE MUSEUM &copy; 2026 &mdash; Nhóm Dammetinhoc | Lớp 12A4</b></p>
-    </footer>
+        <footer>
+            <p><b>THE LITTLE MUSEUM &copy; 2026 &mdash; Nhóm Dammetinhoc | Lớp 12A4</b></p>
+        </footer>
+    </div>
 
     <!-- Nhạc nền chỉ phát khi bấm vào trang của Hoàng Dung -->
     <audio id="dung-music" src="../bwine.mp3" loop preload="auto"></audio>
