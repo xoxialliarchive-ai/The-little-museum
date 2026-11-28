@@ -16,7 +16,7 @@
     }
 
     /* Khung bảo tàng nằm giữa trang */
-    .museum-wrap {
+    .museum-wrap { /*tên class*/
       max-width: 820px;
       margin: 0 auto;
       background-color: #FFFDF7;
@@ -26,10 +26,10 @@
 
     /* Biển hiệu đầu trang */
     header {
-      text-align: center;
-      border-bottom: 3px double #3E4B8E;
-      padding-bottom: 18px;
-      margin-bottom: 28px;
+      text-align: center;  /*Căn giữa toàn bộ chữ và nội dung nằm bên trong*/
+      border-bottom: 3px double #3E4B8E; /*Tạo đường viền nét đôi*/
+      padding-bottom: 18px; /*Tạo khoảng đệm*/
+      margin-bottom: 28px; /*Tạo khoảng cách*/
     }
 
     h1 {
@@ -218,7 +218,9 @@
   </div>
   <!-- Nhạc nền chỉ phát khi bấm vào trang của sảnh -->
 <audio id="base-music" src="basemusic.mp3" loop preload="auto"></audio>
-
+ <!-- loop: phát lặp lại liên tục khi hết bài.
+  "preload="auto": Yêu cầu trình duyệt tải trước file nhạc khi mở trang để lúc phát không bị trễ.
+  { once: true }: Chỉ chạy sự kiện click này đúng 1 lần rồi tự gỡ bỏ. Nhờ vậy mỗi lần người dùng click sang chỗ khác, code không bị chạy lại không cần thiết.-->
 <script>
   const baseMusic = document.getElementById("base-music");
 
