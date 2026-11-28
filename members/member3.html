@@ -117,5 +117,16 @@
     <footer>
         <p>THE LITTLE MUSEUM &copy; 2026 &mdash; Nhóm Dammetinhoc | Lớp 12A4</p>
     </footer>
+    <audio id="dung-music" src="../Tchaikovsky _ Swan Lake _Swan Theme__Audio_128k.mp3" loop preload="auto"></audio>
+
+    <script>
+        const dungMusic = document.getElementById("dung-music");
+
+        document.addEventListener("click", function () {
+            if (dungMusic.paused) {
+                dungMusic.play();
+            }
+        }, { once: true });
+    </script>
 </body>
 </html>
