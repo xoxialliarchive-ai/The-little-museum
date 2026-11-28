@@ -216,5 +216,17 @@
       <p><strong>Liên hệ:</strong> contact@thelittlemuseum.edu.vn</p>
     </footer>
   </div>
+  <!-- Nhạc nền chỉ phát khi bấm vào trang của sảnh -->
+<audio id="base-music" src="basemusic.mp3" loop preload="auto"></audio>
+
+<script>
+  const baseMusic = document.getElementById("base-music");
+
+  document.addEventListener("click", function () {
+    if (baseMusic.paused) {
+      baseMusic.play();
+    }
+  }, { once: true });
+</script>
 </body>
 </html>
